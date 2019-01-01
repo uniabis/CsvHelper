@@ -33,20 +33,21 @@ namespace CsvHelper.DocsGenerator.Generators
 			{
 				content.AppendLine($"[{attribute.FullName}]");
 			}
-			var inheritance = new List<string> { classInfo.BaseType.Name };
+			var inheritance = new List<string> { classInfo.Type.BaseType.Name };
 			inheritance.AddRange(classInfo.Interfaces.Select(i => i.Name));
-			content.AppendLine($"public class {classInfo.Name} : {string.Join(", ", inheritance)}");
+			var abstractText = classInfo.Type.IsAbstract ? "abstract " : string.Empty;
+			content.AppendLine($"public {abstractText}class {classInfo.Name} : {string.Join(", ", inheritance)}");
 			content.AppendLine("```");
 
 			// Inheritance
-			if (classInfo.BaseType != null)
+			if (classInfo.Type.BaseType != null)
 			{
 				var inheritanceStack = new Stack<string>();
 				inheritanceStack.Push(classInfo.Name);
-				var currentType = classInfo.BaseType;
+				var currentType = classInfo.Type.BaseType;
 				do
 				{
-					inheritanceStack.Push(GetTypeLink(currentType));
+					inheritanceStack.Push(linkGenerator.GenerateLink(currentType));
 					currentType = currentType.BaseType;
 				}
 				while (currentType != null);
@@ -62,8 +63,21 @@ namespace CsvHelper.DocsGenerator.Generators
 			content.AppendLine("- | -");
 			foreach (var constructorInfo in classInfo.Constructors)
 			{
-				var parameters = constructorInfo.Parameters.Select(p => GetTypeLink(p.ParameterType));
+				var parameters = constructorInfo.Parameters.Select(p => linkGenerator.GenerateLink(p.ParameterType));
 				content.AppendLine($"{classInfo.Name}({string.Join(", ", parameters)}) | {constructorInfo.Summary}");
+			}
+
+			// Fields
+			if (classInfo.Fields.Count > 0)
+			{
+				content.AppendLine();
+				content.AppendLine("## Fields");
+				content.AppendLine("&nbsp; | &nbsp;");
+				content.AppendLine("- | -");
+				foreach (var field in classInfo.Fields)
+				{
+					content.AppendLine($"{field.Name} | {field.Summary}");
+				}
 			}
 
 			// Properties
@@ -77,7 +91,7 @@ namespace CsvHelper.DocsGenerator.Generators
 				{
 					if (property.IndexParameters.Count > 0)
 					{
-						var parameters = string.Join(", ", property.IndexParameters.Select(ip => GetTypeLink(ip.ParameterType)));
+						var parameters = string.Join(", ", property.IndexParameters.Select(ip => linkGenerator.GenerateLink(ip.ParameterType)));
 						content.AppendLine($"this[{parameters}] | {property.Summary}");
 					}
 					else
@@ -96,7 +110,7 @@ namespace CsvHelper.DocsGenerator.Generators
 				content.AppendLine("- | -");
 				foreach (var method in classInfo.Methods)
 				{
-					var parameters = string.Join(", ", method.Parameters.Select(p => GetTypeLink(p.ParameterType)));
+					var parameters = string.Join(", ", method.Parameters.Select(p => linkGenerator.GenerateLink(p.ParameterType)));
 					content.AppendLine($"{method.Name}({parameters}) | {method.Summary}");
 				}
 			}

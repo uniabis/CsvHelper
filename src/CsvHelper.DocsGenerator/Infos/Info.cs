@@ -17,10 +17,6 @@ namespace CsvHelper.DocsGenerator.Infos
 
 		public string Summary { get; protected set; }
 
-		//public string GetLink(bool useFullName = false)
-		//{
-		//}
-
 		protected string ParseSummary(string memberName, XElement xmlDocs)
 		{
 			var members = xmlDocs.Descendants("member");

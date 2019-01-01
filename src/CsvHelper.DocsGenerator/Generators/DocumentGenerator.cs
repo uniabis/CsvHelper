@@ -1,11 +1,13 @@
 ﻿using CsvHelper.DocsGenerator.Infos;
 using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace CsvHelper.DocsGenerator.Generators
 {
 	public abstract class DocumentGenerator
     {
+		protected readonly LinkGenerator linkGenerator = new LinkGenerator();
 		protected readonly AssemblyInfo assemblyInfo;
 		protected readonly NamespaceInfo namespaceInfo;
 		protected readonly TypeInfo typeInfo;
@@ -37,18 +39,23 @@ namespace CsvHelper.DocsGenerator.Generators
 
 		protected abstract void GenerateContent();
 
-		protected string GetTypeLink(Type type, bool useFullName = false)
+		protected void GenerateInheritance()
 		{
-			var name = useFullName ? type.FullName : type.Name;
-
-			if (type.Namespace.StartsWith("CsvHelper"))
+			if (typeInfo.Type.BaseType != null)
 			{
-				return $"[{name}](/api/{type.Namespace}/{type.Name})";
+				var inheritanceStack = new Stack<string>();
+				inheritanceStack.Push(typeInfo.Name);
+				var currentType = typeInfo.Type.BaseType;
+				do
+				{
+					inheritanceStack.Push(linkGenerator.GenerateLink(currentType));
+					currentType = currentType.BaseType;
+				}
+				while (currentType != null);
+
+				content.AppendLine();
+				content.AppendLine($"Inheritance {string.Join(" -> ", inheritanceStack)}");
 			}
-
-			var fullName = type.FullName ?? $"{type.Namespace}.{type.Name}";
-
-			return $"[{name}](https://docs.microsoft.com/en-us/dotnet/api/{fullName.ToLower()})";
 		}
 
 		private string GetName()
