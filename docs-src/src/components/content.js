@@ -47,7 +47,7 @@ function initializeMarked(isDev) {
 			code = this.options.highlight(code, lang) || code;
 		}
 
-		return wrapInColumns(`<pre><code class="${lang}">${code}</code></pre>`);
+		return `<div class="columns"><div class="column" style="overflow-x: auto"><pre><code class="${lang}">${code}</code></pre></div></div>`;
 	}
 	renderer.heading = (text, level) => `<h${level} id="${toSeoFriendly(text)}" class="title is-${level}"><span>${htmlEncode(text)}</span></h${level}>`;
 	renderer.link = (href, title, text) => {

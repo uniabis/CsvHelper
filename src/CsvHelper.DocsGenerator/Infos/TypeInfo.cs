@@ -12,8 +12,10 @@ using System.Xml.Linq;
 namespace CsvHelper.DocsGenerator.Infos
 {
 	[DebuggerDisplay("Name = {Name}")]
-	public abstract class TypeInfo : Info
+	public class TypeInfo : Info
     {
+		private static LinkGenerator linkGenerator = new LinkGenerator();
+
 		public NamespaceInfo Namespace { get; private set; }
 
 		public Type Type { get; private set; }
@@ -45,8 +47,9 @@ namespace CsvHelper.DocsGenerator.Infos
 			Interfaces = type.GetInterfaces().ToList();
 
 			Constructors = type
-				.GetConstructors(BindingFlags.Public | BindingFlags.Instance)
+				.GetConstructors(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly)
 				.Select(c => new ConstructorInfo(c, xmlDocs))
+				.Where(c => !(c.Parameters.Count == 0 && string.IsNullOrEmpty(c.Summary)))
 				.OrderBy(c => c.Parameters.Count)
 				.ToList();
 
@@ -56,8 +59,11 @@ namespace CsvHelper.DocsGenerator.Infos
 				.OrderBy(t => t.Name)
 				.ToList();
 
+			var fieldsFlags = type.IsEnum
+				? BindingFlags.Public | BindingFlags.Static | BindingFlags.DeclaredOnly
+				: BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static | BindingFlags.DeclaredOnly;
 			Fields = type
-				.GetFields(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static | BindingFlags.DeclaredOnly)
+				.GetFields(fieldsFlags)
 				.Select(f => new FieldInfo(f, xmlDocs))
 				.OrderBy(f => f.Name)
 				.ToList();

@@ -46,7 +46,7 @@ namespace CsvHelper.DocsGenerator.Infos
 								throw new InvalidOperationException($"Unhandled element '{el.Name}'.");
 						}
 
-						text = $"`{text.Trim()}`";
+						text = $"``{text.Trim()}``";
 					}
 					else if (node.NodeType == XmlNodeType.Text)
 					{

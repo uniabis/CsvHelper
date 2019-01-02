@@ -17,22 +17,7 @@ namespace CsvHelper.DocsGenerator.Generators
 
 		public DocumentGenerator Create(TypeInfo typeInfo)
 		{
-			if (typeInfo is ClassInfo)
-			{
-				return new ClassGenerator((ClassInfo)typeInfo);
-			}
-
-			if (typeInfo is InterfaceInfo)
-			{
-				return new InterfaceGenerator((InterfaceInfo)typeInfo);
-			}
-
-			if (typeInfo is EnumInfo)
-			{
-				return new EnumGenerator((EnumInfo)typeInfo);
-			}
-
-			throw new InvalidOperationException($"Type '{typeInfo.Name}' has no generator.");
+			return new TypeGenerator(typeInfo);
 		}
     }
 }

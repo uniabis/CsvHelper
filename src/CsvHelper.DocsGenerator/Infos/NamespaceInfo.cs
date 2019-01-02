@@ -15,11 +15,11 @@ namespace CsvHelper.DocsGenerator.Infos
 
 		public List<TypeInfo> Types { get; private set; } = new List<TypeInfo>();
 
-		public List<ClassInfo> Classes { get; private set; } = new List<ClassInfo>();
+		public List<TypeInfo> Classes { get; private set; } = new List<TypeInfo>();
 
-		public List<InterfaceInfo> Interfaces { get; private set; } = new List<InterfaceInfo>();
+		public List<TypeInfo> Interfaces { get; private set; } = new List<TypeInfo>();
 
-		public List<EnumInfo> Enums { get; private set; } = new List<EnumInfo>();
+		public List<TypeInfo> Enums { get; private set; } = new List<TypeInfo>();
 
         public NamespaceInfo(AssemblyInfo assemblyInfo, string @namespace, List<Type> types, XElement xmlDocs)
 		{
@@ -29,27 +29,20 @@ namespace CsvHelper.DocsGenerator.Infos
 
 			foreach (var type in types)
 			{
+				var typeInfo = new TypeInfo(this, type, xmlDocs);
+				Types.Add(typeInfo);
+
 				if (type.IsClass)
 				{
-					var classInfo = new ClassInfo(this, type, xmlDocs);
-					Classes.Add(classInfo);
-					Types.Add(classInfo);
+					Classes.Add(typeInfo);
 				}
 				else if (type.IsInterface)
 				{
-					var interfaceInfo = new InterfaceInfo(this, type, xmlDocs);
-					Interfaces.Add(interfaceInfo);
-					Types.Add(interfaceInfo);
+					Interfaces.Add(typeInfo);
 				}
 				else if (type.IsEnum)
 				{
-					var enumInfo = new EnumInfo(this, type, xmlDocs);
-					Enums.Add(enumInfo);
-					Types.Add(enumInfo);
-				}
-				else
-				{
-					throw new InvalidOperationException($"Type '{type.FullName}' has no info class.");
+					Enums.Add(typeInfo);
 				}
 			}
 		}

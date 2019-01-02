@@ -38,34 +38,5 @@ namespace CsvHelper.DocsGenerator.Generators
 		}
 
 		protected abstract void GenerateContent();
-
-		protected void GenerateInheritance()
-		{
-			if (typeInfo.Type.BaseType != null)
-			{
-				var inheritanceStack = new Stack<string>();
-				inheritanceStack.Push(typeInfo.Name);
-				var currentType = typeInfo.Type.BaseType;
-				do
-				{
-					inheritanceStack.Push(linkGenerator.GenerateLink(currentType));
-					currentType = currentType.BaseType;
-				}
-				while (currentType != null);
-
-				content.AppendLine();
-				content.AppendLine($"Inheritance {string.Join(" -> ", inheritanceStack)}");
-			}
-		}
-
-		private string GetName()
-		{
-			if (assemblyInfo != null)
-			{
-				return assemblyInfo.Name;
-			}
-
-			return typeInfo.Name;
-		}
     }
 }

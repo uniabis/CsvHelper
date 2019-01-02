@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,20 +14,20 @@ namespace CsvHelper.DocsGenerator.Infos
 
 		public MethodInfo(System.Reflection.MethodInfo methodInfo, XElement xmlDocs)
 		{
-			Name = methodInfo.Name;
+			Name = methodInfo.GetName();
 
-			FullName = $"{methodInfo.DeclaringType.FullName}.{Name}";
+			FullName = methodInfo.GetFullName();
 
 			Parameters = methodInfo.GetParameters().ToList();
 
 			if (Parameters.Count > 0)
 			{
-				var parameters = string.Join(",", Parameters.Select(p => p.ParameterType.FullName));
-				Summary = ParseSummary($"M:{FullName}({parameters})", xmlDocs);
+				var parameters = string.Join(",", Parameters.Select(p => p.ParameterType.GetTitle()));
+				Summary = ParseSummary($"M:{methodInfo.GetTitle()}({parameters})", xmlDocs);
 			}
 			else
 			{
-				Summary = ParseSummary($"M:{FullName}", xmlDocs);
+				Summary = ParseSummary($"M:{methodInfo.GetTitle()}", xmlDocs);
 			}
 		}
 	}

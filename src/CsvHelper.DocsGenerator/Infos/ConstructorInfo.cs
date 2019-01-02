@@ -1,5 +1,7 @@
-﻿using System;
+﻿using CsvHelper.Configuration;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,13 +15,14 @@ namespace CsvHelper.DocsGenerator.Infos
 
 		public ConstructorInfo(System.Reflection.ConstructorInfo constructorInfo, XElement xmlDocs)
 		{
-			Name = constructorInfo.DeclaringType.Name;
+			Name = constructorInfo.DeclaringType.GetName();
 
-			FullName = $"{constructorInfo.DeclaringType.FullName}";
+			FullName = constructorInfo.DeclaringType.GetFullName();
 
 			Parameters = constructorInfo.GetParameters().ToList();
 
-			Summary = ParseSummary($"M:{FullName}.#ctor({string.Join(",", Parameters.Select(p => p.ParameterType.FullName))})", xmlDocs);
+			var parameters = Parameters.Count > 0 ? $"({string.Join(",", Parameters.Select(p => $"{p.ParameterType.Namespace}.{p.ParameterType.GetTitle()}"))})" : string.Empty;
+			Summary = ParseSummary($"M:{constructorInfo.DeclaringType.GetFullName()}.#ctor{parameters}", xmlDocs);
 		}
     }
 }

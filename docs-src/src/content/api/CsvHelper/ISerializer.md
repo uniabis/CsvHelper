@@ -1,3 +1,23 @@
 # ISerializer Interface
 
-Coming soon...
+Namespace: [CsvHelper](/api/CsvHelper)
+
+Defines methods used to serialize data into a CSV file.
+
+```cs
+public interface ISerializer : IDisposable
+```
+
+## Properties
+&nbsp; | &nbsp;
+- | -
+Configuration | Gets the configuration.
+Context | Gets the writing context.
+
+## Methods
+&nbsp; | &nbsp;
+- | -
+Write([String[]](https://docs.microsoft.com/en-us/dotnet/api/system.string[])) | 
+WriteAsync([String[]](https://docs.microsoft.com/en-us/dotnet/api/system.string[])) | 
+WriteLine() | 
+WriteLineAsync() | 

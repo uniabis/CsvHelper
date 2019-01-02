@@ -1,3 +1,22 @@
 # IObjectResolver Interface
 
-Coming soon...
+Namespace: [CsvHelper](/api/CsvHelper)
+
+Defines the functionality of a class that creates objects from a given type.
+
+```cs
+public interface IObjectResolver : 
+```
+
+## Properties
+&nbsp; | &nbsp;
+- | -
+CanResolve | A value indicating if the resolver is able to resolve the given type. True if the type can be resolved, otherwise false.
+ResolveFunction | The function that creates an object from a given type.
+UseFallback | A value indicating if the resolver's ``CsvHelper.IObjectResolver.CanResolve`` returns false that an object will still be created using CsvHelper's object creation. True to fallback, otherwise false. Default value is true.
+
+## Methods
+&nbsp; | &nbsp;
+- | -
+Resolve([Type](https://docs.microsoft.com/en-us/dotnet/api/system.type), [Object[]](https://docs.microsoft.com/en-us/dotnet/api/system.object[])) | 
+Resolve([Object[]](https://docs.microsoft.com/en-us/dotnet/api/system.object[])) | 
