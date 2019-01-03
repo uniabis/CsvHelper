@@ -18,4 +18,4 @@ RecordWriterFactory([CsvWriter](/api/CsvHelper/CsvWriter)) | Initializes a new i
 ## Methods
 &nbsp; | &nbsp;
 - | -
-MakeRecordWriter([T](/api/CsvHelper.Expressions/T)) | 
+MakeRecordWriter&lt;T&gt;(T) | Creates a new record writer for the given record.

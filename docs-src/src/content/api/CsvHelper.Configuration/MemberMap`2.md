@@ -1,4 +1,4 @@
-# MemberMap&lt;TClass,TMember&gt; Class
+# MemberMap<TClass, TMember> Class
 
 Namespace: [CsvHelper.Configuration](/api/CsvHelper.Configuration)
 
@@ -6,7 +6,7 @@ Mapping info for a member to a CSV field.
 
 ```cs
 [System.Diagnostics.DebuggerDisplayAttribute]
-public class MemberMap<TClass,TMember> : MemberMap
+public class MemberMap<TClass, TMember> : MemberMap
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [MemberMap](/api/CsvHelper.Configuration/MemberMap) -> MemberMap&lt;TClass,TMember&gt;
@@ -14,22 +14,22 @@ Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-MemberMap&lt;TClass,TMember&gt;([MemberInfo](https://docs.microsoft.com/en-us/dotnet/api/system.reflection.memberinfo)) | Creates a new ``CsvHelper.Configuration.MemberMap`` instance using the specified member.
+MemberMap`2([MemberInfo](https://docs.microsoft.com/en-us/dotnet/api/system.reflection.memberinfo)) | Creates a new ``CsvHelper.Configuration.MemberMap`` instance using the specified member.
 
 ## Methods
 &nbsp; | &nbsp;
 - | -
-Constant([TMember](/api/CsvHelper.Configuration/TMember)) | 
-ConvertUsing([Func&lt;IReaderRow,TMember&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.func`2)) | 
-ConvertUsing([Func&lt;TClass,String&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.func`2)) | 
-Default([TMember](/api/CsvHelper.Configuration/TMember)) | 
-Default([String](https://docs.microsoft.com/en-us/dotnet/api/system.string)) | 
-Ignore() | 
-Ignore([Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean)) | 
-Index([Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32), [Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)) | 
-Name([String[]](https://docs.microsoft.com/en-us/dotnet/api/system.string[])) | 
-NameIndex([Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)) | 
-Optional() | 
-TypeConverter([ITypeConverter](/api/CsvHelper.TypeConversion/ITypeConverter)) | 
-TypeConverter() | 
-Validate([Func&lt;String,Boolean&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.func`2)) | 
+Constant(TMember) | The constant value that will be used for every record when reading and writing. This value will always be used no matter what other mapping configurations are specified.
+ConvertUsing([Func<IReaderRow, TMember>) | Specifies an expression to be used to convert data in the row to the member.
+ConvertUsing([Func<TClass, String>) | Specifies an expression to be used to convert the object to a field.
+Default(TMember) | The default value that will be used when reading when the CSV field is empty.
+Default([String](https://docs.microsoft.com/en-us/dotnet/api/system.string)) | The default value that will be used when reading when the CSV field is empty. This value is not type checked and will use a ``CsvHelper.TypeConversion.ITypeConverter`` to convert the field. This could potentially have runtime errors.
+Ignore() | Ignore the member when reading and writing. If this member has already been mapped as a reference member, either by a class map, or by automapping, calling this method will not ingore all the child members down the tree that have already been mapped.
+Ignore([Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean)) | Ignore the member when reading and writing. If this member has already been mapped as a reference member, either by a class map, or by automapping, calling this method will not ingore all the child members down the tree that have already been mapped.
+Index([Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32), [Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)) | When reading, is used to get the field at the given index. When writing, the fields will be written in the order of the field indexes.
+Name([String[]](https://docs.microsoft.com/en-us/dotnet/api/system.string[])) | When reading, is used to get the field at the index of the name if there was a header specified. It will look for the first name match in the order listed. When writing, sets the name of the field in the header record. The first name will be used.
+NameIndex([Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)) | When reading, is used to get the index of the name used when there are multiple names that are the same.
+Optional() | Ignore the member when reading if no matching field name can be found.
+TypeConverter([ITypeConverter](/api/CsvHelper.TypeConversion/ITypeConverter)) | Specifies the ``CsvHelper.Configuration.MemberMap`2.TypeConverter(CsvHelper.TypeConversion.ITypeConverter)`` to use when converting the member to and from a CSV field.
+TypeConverter&lt;TConverter&gt;() | Specifies the ``CsvHelper.Configuration.MemberMap`2.TypeConverter(CsvHelper.TypeConversion.ITypeConverter)`` to use when converting the member to and from a CSV field.
+Validate([Func<String, Boolean>) | Specifies an expression to be used to validate a field when reading.

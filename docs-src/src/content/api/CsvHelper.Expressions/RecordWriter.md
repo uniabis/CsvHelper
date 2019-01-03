@@ -18,4 +18,4 @@ RecordWriter([CsvWriter](/api/CsvHelper/CsvWriter)) | Initializes a new instance
 ## Methods
 &nbsp; | &nbsp;
 - | -
-Write([T](/api/CsvHelper.Expressions/T)) | 
+Write&lt;T&gt;(T) | Writes the record to the current row.

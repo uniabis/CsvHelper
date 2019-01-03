@@ -99,7 +99,7 @@ namespace CsvHelper.DocsGenerator
 							(
 								namespaceInfo.Types.Select(typeInfo => new JObject
 								(
-									new JProperty("title", typeInfo.Type.GetTitle()),
+									new JProperty("title", typeInfo.Type.GetDisplayName()),
 									new JProperty("path", $"api/{namespaceInfo.Name}/{typeInfo.Name}")
 								))
 							))

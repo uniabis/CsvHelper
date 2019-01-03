@@ -1,4 +1,4 @@
-# IHasMap&lt;TClass&gt; Interface
+# IHasMap<TClass> Interface
 
 Namespace: [CsvHelper.Configuration](/api/CsvHelper.Configuration)
 
@@ -11,4 +11,4 @@ public interface IHasMap<TClass> : IBuildableClass<TClass>
 ## Methods
 &nbsp; | &nbsp;
 - | -
-Map([Expression&lt;Func&lt;TClass,TMember&gt;&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.linq.expressions.expression`1), [Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean)) | 
+Map&lt;TMember&gt;([Expression<Func<TClass, TMember>>, [Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean)) | Maps a member to a CSV field.

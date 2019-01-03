@@ -1,14 +1,14 @@
-# IHasOptional&lt;TClass,TMember&gt; Interface
+# IHasOptional<TClass, TMember> Interface
 
 Namespace: [CsvHelper.Configuration](/api/CsvHelper.Configuration)
 
 Has optional capabilities.
 
 ```cs
-public interface IHasOptional<TClass,TMember> : IBuildableClass<TClass>
+public interface IHasOptional<TClass, TMember> : IBuildableClass<TClass>
 ```
 
 ## Methods
 &nbsp; | &nbsp;
 - | -
-Optional() | 
+Optional() | Ignore the member when reading if no matching field name can be found.

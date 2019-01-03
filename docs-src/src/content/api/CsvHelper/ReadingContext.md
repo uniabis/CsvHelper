@@ -58,5 +58,5 @@ ReaderConfiguration | Gets the ``CsvHelper.CsvReader`` configuration.
 ## Methods
 &nbsp; | &nbsp;
 - | -
-ClearCache([Caches](/api/CsvHelper/Caches)) | 
-Dispose() | 
+ClearCache([Caches](/api/CsvHelper/Caches)) | Clears the specified caches.
+Dispose() | Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.

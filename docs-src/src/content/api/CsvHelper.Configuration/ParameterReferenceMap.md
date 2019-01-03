@@ -23,4 +23,4 @@ Data | Gets the parameter reference map data.
 ## Methods
 &nbsp; | &nbsp;
 - | -
-Prefix([String](https://docs.microsoft.com/en-us/dotnet/api/system.string)) | 
+Prefix([String](https://docs.microsoft.com/en-us/dotnet/api/system.string)) | Appends a prefix to the header of each field of the reference parameter.

@@ -22,14 +22,14 @@ this[[Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)] | Gets o
 ## Methods
 &nbsp; | &nbsp;
 - | -
-Add([MemberReferenceMap](/api/CsvHelper.Configuration/MemberReferenceMap)) | 
-Clear() | 
-Contains([MemberReferenceMap](/api/CsvHelper.Configuration/MemberReferenceMap)) | 
-CopyTo([MemberReferenceMap[]](/api/CsvHelper.Configuration/MemberReferenceMap[]), [Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)) | 
-Find([Expression&lt;Func&lt;T,Object&gt;&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.linq.expressions.expression`1)) | 
-Find([MemberInfo](https://docs.microsoft.com/en-us/dotnet/api/system.reflection.memberinfo)) | 
-GetEnumerator() | 
-IndexOf([MemberReferenceMap](/api/CsvHelper.Configuration/MemberReferenceMap)) | 
-Insert([Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32), [MemberReferenceMap](/api/CsvHelper.Configuration/MemberReferenceMap)) | 
-Remove([MemberReferenceMap](/api/CsvHelper.Configuration/MemberReferenceMap)) | 
-RemoveAt([Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)) | 
+Add([MemberReferenceMap](/api/CsvHelper.Configuration/MemberReferenceMap)) | Adds an item to the ``System.Collections.Generic.ICollection`1`` .
+Clear() | Removes all items from the ``System.Collections.Generic.ICollection`1`` .
+Contains([MemberReferenceMap](/api/CsvHelper.Configuration/MemberReferenceMap)) | Determines whether the ``System.Collections.Generic.ICollection`1`` contains a specific value.
+CopyTo([MemberReferenceMap[]](/api/CsvHelper.Configuration/MemberReferenceMap[]), [Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)) | Copies the elements of the ``System.Collections.Generic.ICollection`1`` to an ``System.Array`` , starting at a particular ``System.Array`` index.
+Find&lt;T&gt;([Expression<Func<T, Object>>) | Finds the ``CsvHelper.Configuration.MemberReferenceMap`` using the given member expression.
+Find([MemberInfo](https://docs.microsoft.com/en-us/dotnet/api/system.reflection.memberinfo)) | Finds the ``CsvHelper.Configuration.MemberReferenceMap`` using the given member.
+GetEnumerator() | Returns an enumerator that iterates through the collection.
+IndexOf([MemberReferenceMap](/api/CsvHelper.Configuration/MemberReferenceMap)) | Determines the index of a specific item in the ``System.Collections.Generic.IList`1`` .
+Insert([Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32), [MemberReferenceMap](/api/CsvHelper.Configuration/MemberReferenceMap)) | Inserts an item to the ``System.Collections.Generic.IList`1`` at the specified index.
+Remove([MemberReferenceMap](/api/CsvHelper.Configuration/MemberReferenceMap)) | Removes the first occurrence of a specific object from the ``System.Collections.Generic.ICollection`1`` .
+RemoveAt([Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)) | Removes the ``System.Collections.Generic.IList`1`` item at the specified index.

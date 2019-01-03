@@ -18,5 +18,5 @@ FieldReader | Gets the ``CsvHelper.IParser.FieldReader`` .
 ## Methods
 &nbsp; | &nbsp;
 - | -
-Read() | 
-ReadAsync() | 
+Read() | Reads a record from the CSV file.
+ReadAsync() | Reads a record from the CSV file asynchronously.

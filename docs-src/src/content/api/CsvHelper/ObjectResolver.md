@@ -14,7 +14,7 @@ Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) 
 &nbsp; | &nbsp;
 - | -
 ObjectResolver() | Creates an instance of the object resolver using default values.
-ObjectResolver([Func&lt;Type,Boolean&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.func`2), [Func&lt;Type,Object[],Object&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.func`3), [Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean)) | 
+ObjectResolver([Func<Type, Boolean>, [Func<Type, Object[], Object>, [Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean)) | Creates an instance of the object resolver using the given can create function and creat function.
 
 ## Properties
 &nbsp; | &nbsp;
@@ -27,5 +27,5 @@ UseFallback | A value indicating if the resolver's ``CsvHelper.ObjectResolver.Ca
 ## Methods
 &nbsp; | &nbsp;
 - | -
-Resolve([Type](https://docs.microsoft.com/en-us/dotnet/api/system.type), [Object[]](https://docs.microsoft.com/en-us/dotnet/api/system.object[])) | 
-Resolve([Object[]](https://docs.microsoft.com/en-us/dotnet/api/system.object[])) | 
+Resolve([Type](https://docs.microsoft.com/en-us/dotnet/api/system.type), [Object[]](https://docs.microsoft.com/en-us/dotnet/api/system.object[])) | Creates an object from the given type using the ``CsvHelper.ObjectResolver.ResolveFunction`` function. If ``CsvHelper.ObjectResolver.CanResolve`` is false, the object will be created using CsvHelper's default object creation. If ``CsvHelper.ObjectResolver.UseFallback`` is false, an exception is thrown.
+Resolve&lt;T&gt;([Object[]](https://docs.microsoft.com/en-us/dotnet/api/system.object[])) | Creates an object from the given type using the ``CsvHelper.ObjectResolver.ResolveFunction`` function. If ``CsvHelper.ObjectResolver.CanResolve`` is false, the object will be created using CsvHelper's default object creation. If ``CsvHelper.ObjectResolver.UseFallback`` is false, an exception is thrown.

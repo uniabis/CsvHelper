@@ -1,4 +1,5 @@
-﻿using CsvHelper.DocsGenerator.Infos;
+﻿using CsvHelper.DocsGenerator.Formatters;
+using CsvHelper.DocsGenerator.Infos;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,6 +8,7 @@ namespace CsvHelper.DocsGenerator.Generators
 {
 	public abstract class DocumentGenerator
     {
+		protected readonly HtmlFormatter htmlFormatter = new HtmlFormatter();
 		protected readonly LinkGenerator linkGenerator = new LinkGenerator();
 		protected readonly AssemblyInfo assemblyInfo;
 		protected readonly NamespaceInfo namespaceInfo;

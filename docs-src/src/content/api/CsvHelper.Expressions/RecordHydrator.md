@@ -18,4 +18,4 @@ RecordHydrator([CsvReader](/api/CsvHelper/CsvReader)) | Creates a new instance u
 ## Methods
 &nbsp; | &nbsp;
 - | -
-Hydrate([T](/api/CsvHelper.Expressions/T)) | 
+Hydrate&lt;T&gt;(T) | Hydrates members of the given record using the current reader row.

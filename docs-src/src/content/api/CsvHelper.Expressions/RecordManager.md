@@ -19,7 +19,7 @@ RecordManager([CsvWriter](/api/CsvHelper/CsvWriter)) | Initializes a new instanc
 ## Methods
 &nbsp; | &nbsp;
 - | -
-Create() | 
-Create([Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)) | 
-Hydrate([T](/api/CsvHelper.Expressions/T)) | 
-Write([T](/api/CsvHelper.Expressions/T)) | 
+Create&lt;T&gt;() | Creates a record of the given type using the current reader row.
+Create([Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)) | Creates a record of the given type using the current reader row.
+Hydrate&lt;T&gt;(T) | Hydrates the given record using the current reader row.
+Write&lt;T&gt;(T) | Writes the given record to the current writer row.

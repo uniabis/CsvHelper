@@ -12,12 +12,12 @@ namespace CsvHelper.DocsGenerator
 		{
 			if (type.Namespace.StartsWith("CsvHelper"))
 			{
-				return $"[{type.GetTitle()}](/api/{type.Namespace}/{type.Name})";
+				return $"[{type.GetDisplayName()}](/api/{type.Namespace}/{type.Name})";
 			}
 
 			var fullName = $"{type.Namespace}.{type.Name}";
 
-			return $"[{type.GetTitle()}](https://docs.microsoft.com/en-us/dotnet/api/{fullName.ToLower()})";
+			return $"[{type.GetDisplayName()}](https://docs.microsoft.com/en-us/dotnet/api/{fullName.ToLower()})";
 		}
 	}
 }

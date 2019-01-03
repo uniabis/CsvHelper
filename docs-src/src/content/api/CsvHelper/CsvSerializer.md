@@ -27,8 +27,8 @@ Context | Gets the writing context.
 ## Methods
 &nbsp; | &nbsp;
 - | -
-Dispose() | 
-Write([String[]](https://docs.microsoft.com/en-us/dotnet/api/system.string[])) | 
-WriteAsync([String[]](https://docs.microsoft.com/en-us/dotnet/api/system.string[])) | 
-WriteLine() | 
-WriteLineAsync() | 
+Dispose() | Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+Write([String[]](https://docs.microsoft.com/en-us/dotnet/api/system.string[])) | Writes a record to the CSV file.
+WriteAsync([String[]](https://docs.microsoft.com/en-us/dotnet/api/system.string[])) | Writes a record to the CSV file.
+WriteLine() | Writes a new line to the CSV file.
+WriteLineAsync() | Writes a new line to the CSV file.

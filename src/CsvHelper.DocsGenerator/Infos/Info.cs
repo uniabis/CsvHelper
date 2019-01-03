@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CsvHelper.DocsGenerator.Formatters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,8 @@ namespace CsvHelper.DocsGenerator.Infos
 {
     public abstract class Info
     {
+		protected readonly XmlDocFormatter xmlDocFormatter = new XmlDocFormatter();
+
 		public string Name { get; protected set; }
 
 		public string FullName { get; protected set; }

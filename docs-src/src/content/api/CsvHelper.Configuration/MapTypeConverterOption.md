@@ -18,10 +18,10 @@ MapTypeConverterOption([MemberMap](/api/CsvHelper.Configuration/MemberMap)) | Cr
 ## Methods
 &nbsp; | &nbsp;
 - | -
-BooleanValues([Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean), [Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean), [String[]](https://docs.microsoft.com/en-us/dotnet/api/system.string[])) | 
-CultureInfo([CultureInfo](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo)) | 
-DateTimeStyles([DateTimeStyles](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.datetimestyles)) | 
-Format([String[]](https://docs.microsoft.com/en-us/dotnet/api/system.string[])) | 
-NullValues([String[]](https://docs.microsoft.com/en-us/dotnet/api/system.string[])) | 
-NullValues([Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean), [String[]](https://docs.microsoft.com/en-us/dotnet/api/system.string[])) | 
-NumberStyles([NumberStyles](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.numberstyles)) | 
+BooleanValues([Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean), [Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean), [String[]](https://docs.microsoft.com/en-us/dotnet/api/system.string[])) | The string values used to represent a boolean when converting.
+CultureInfo([CultureInfo](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo)) | The ``CsvHelper.Configuration.MapTypeConverterOption.CultureInfo(System.Globalization.CultureInfo)`` used when type converting. This will override the global ``CsvHelper.Configuration.Configuration.CultureInfo`` setting.
+DateTimeStyles([DateTimeStyles](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.datetimestyles)) | The ``CsvHelper.Configuration.MapTypeConverterOption.DateTimeStyles(System.Globalization.DateTimeStyles)`` to use when type converting. This is used when doing any ``System.DateTime`` conversions.
+Format([String[]](https://docs.microsoft.com/en-us/dotnet/api/system.string[])) | The string format to be used when type converting.
+NullValues([String[]](https://docs.microsoft.com/en-us/dotnet/api/system.string[])) | The string values used to represent null when converting.
+NullValues([Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean), [String[]](https://docs.microsoft.com/en-us/dotnet/api/system.string[])) | The string values used to represent null when converting.
+NumberStyles([NumberStyles](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.numberstyles)) | The ``CsvHelper.Configuration.MapTypeConverterOption.NumberStyles(System.Globalization.NumberStyles)`` to use when type converting. This is used when doing any number conversions.

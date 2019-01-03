@@ -29,7 +29,7 @@ namespace CsvHelper.DocsGenerator.Infos
 
 			foreach (var type in types)
 			{
-				var typeInfo = new TypeInfo(this, type, xmlDocs);
+				var typeInfo = new TypeInfo(type, xmlDocs);
 				Types.Add(typeInfo);
 
 				if (type.IsClass)

@@ -29,6 +29,6 @@ FieldReader | Gets the ``CsvHelper.CsvParser.FieldReader`` .
 ## Methods
 &nbsp; | &nbsp;
 - | -
-Dispose() | 
-Read() | 
-ReadAsync() | 
+Dispose() | Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+Read() | Reads a record from the CSV file.
+ReadAsync() | Reads a record from the CSV file asynchronously.

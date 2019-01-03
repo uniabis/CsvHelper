@@ -18,5 +18,5 @@ RecordCreator([CsvReader](/api/CsvHelper/CsvReader)) | Initializes a new instanc
 ## Methods
 &nbsp; | &nbsp;
 - | -
-Create() | 
-Create([Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)) | 
+Create&lt;T&gt;() | Create a record of the given type using the current row.
+Create([Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)) | Create a record of the given type using the current row.

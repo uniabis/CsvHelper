@@ -10,24 +10,29 @@ namespace CsvHelper.DocsGenerator.Infos
 {
     public class MethodInfo : Info
     {
-		public List<System.Reflection.ParameterInfo> Parameters { get; set; }
+		public System.Reflection.MethodInfo Method { get; private set; }
+
+		public List<System.Reflection.ParameterInfo> Parameters { get; private set; }
+
+		public List<Type> GenericArguments { get; private set; }
 
 		public MethodInfo(System.Reflection.MethodInfo methodInfo, XElement xmlDocs)
 		{
+			Method = methodInfo;
+
 			Name = methodInfo.GetName();
 
 			FullName = methodInfo.GetFullName();
 
 			Parameters = methodInfo.GetParameters().ToList();
 
-			if (Parameters.Count > 0)
+			GenericArguments = methodInfo.GetGenericArguments().ToList();
+
+			Summary = ParseSummary(xmlDocFormatter.Format(methodInfo), xmlDocs);
+
+			if (Summary == null)
 			{
-				var parameters = string.Join(",", Parameters.Select(p => p.ParameterType.GetTitle()));
-				Summary = ParseSummary($"M:{methodInfo.GetTitle()}({parameters})", xmlDocs);
-			}
-			else
-			{
-				Summary = ParseSummary($"M:{methodInfo.GetTitle()}", xmlDocs);
+				Console.WriteLine($"No summary found for '{xmlDocFormatter.Format(methodInfo)}'.");
 			}
 		}
 	}

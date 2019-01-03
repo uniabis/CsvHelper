@@ -25,6 +25,6 @@ Length | The number of records.
 ## Methods
 &nbsp; | &nbsp;
 - | -
-Add([String](https://docs.microsoft.com/en-us/dotnet/api/system.string)) | 
-Clear() | 
-ToArray() | 
+Add([String](https://docs.microsoft.com/en-us/dotnet/api/system.string)) | Adds a new field to the ``CsvHelper.RecordBuilder`` .
+Clear() | Clears the records.
+ToArray() | Returns the record as an ``string[]`` .

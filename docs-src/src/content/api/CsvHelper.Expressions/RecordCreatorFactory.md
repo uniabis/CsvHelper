@@ -18,4 +18,4 @@ RecordCreatorFactory([CsvReader](/api/CsvHelper/CsvReader)) | Initializes a new 
 ## Methods
 &nbsp; | &nbsp;
 - | -
-MakeRecordCreator([Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)) | 
+MakeRecordCreator([Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)) | Creates a record creator for the given record type.

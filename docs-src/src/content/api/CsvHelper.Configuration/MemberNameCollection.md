@@ -22,7 +22,7 @@ Prefix | Gets the prefix to use for each name.
 ## Methods
 &nbsp; | &nbsp;
 - | -
-Add([String](https://docs.microsoft.com/en-us/dotnet/api/system.string)) | 
-AddRange([IEnumerable&lt;String&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable`1)) | 
-Clear() | 
-GetEnumerator() | 
+Add([String](https://docs.microsoft.com/en-us/dotnet/api/system.string)) | Adds the given name to the collection.
+AddRange([IEnumerable<String>) | Adds a range of names to the collection.
+Clear() | Clears all names from the collection.
+GetEnumerator() | Returns an enumerator that iterates through the collection.

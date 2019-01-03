@@ -24,4 +24,4 @@ this[[Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)] | Gets the
 ## Methods
 &nbsp; | &nbsp;
 - | -
-Find() | 
+Find&lt;T&gt;() | Finds the ``CsvHelper.Configuration.ClassMap`` for the specified record type.

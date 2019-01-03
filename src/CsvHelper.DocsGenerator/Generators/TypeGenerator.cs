@@ -29,11 +29,11 @@ namespace CsvHelper.DocsGenerator.Generators
 			}
 
 			// Title
-			content.AppendLine($"# {typeInfo.Type.GetTitle()} {fileType}");
+			content.AppendLine($"# {htmlFormatter.Format(typeInfo.Type)} {fileType}");
 
 			// Namespace
 			content.AppendLine();
-			content.AppendLine($"Namespace: [{typeInfo.Namespace.Name}](/api/{typeInfo.Namespace.Name})");
+			content.AppendLine($"Namespace: [{typeInfo.Type.Namespace}](/api/{typeInfo.Type.Namespace})");
 
 			// Summary
 			content.AppendLine();
@@ -44,15 +44,16 @@ namespace CsvHelper.DocsGenerator.Generators
 			content.AppendLine("```cs");
 			foreach (var attribute in typeInfo.Attributes)
 			{
-				content.AppendLine($"[{attribute.FullName}]");
+				content.AppendLine($"[{attribute.Namespace}.{htmlFormatter.Format(attribute)}]");
 			}
+
 			var inheritance = new List<string>();
 			if (typeInfo.Type.BaseType != null && typeInfo.Type.BaseType != typeof(object))
 			{
-				inheritance.Add(typeInfo.Type.BaseType.GetTitle(EncodingType.Code));
+				inheritance.Add(htmlFormatter.Format(typeInfo.Type.BaseType));
 			}
 
-			inheritance.AddRange(typeInfo.Interfaces.Select(i => i.GetTitle(EncodingType.Code)));
+			inheritance.AddRange(typeInfo.Interfaces.Select(i => htmlFormatter.Format(i)));
 			var inheritanceText = typeInfo.Type.IsEnum ? string.Empty : $": {string.Join(", ", inheritance)}";
 			var typeModifier = string.Empty;
 			if (typeInfo.Type.IsAbstract && typeInfo.Type.IsSealed && !typeInfo.Type.IsInterface)
@@ -64,18 +65,18 @@ namespace CsvHelper.DocsGenerator.Generators
 				typeModifier = "abstract ";
 			}
 
-			content.AppendLine($"public {typeModifier}{fileType.ToLower()} {typeInfo.Type.GetTitle(EncodingType.Code)} {inheritanceText}");
+			content.AppendLine($"public {typeModifier}{fileType.ToLower()} {htmlFormatter.Format(typeInfo.Type)} {inheritanceText}");
 			content.AppendLine("```");
 
 			// Inheritance
 			if (typeInfo.Type.BaseType != null)
 			{
 				var inheritanceStack = new Stack<string>();
-				inheritanceStack.Push(typeInfo.Type.GetTitle());
+				inheritanceStack.Push(typeInfo.Type.GetDisplayName());
 				var currentType = typeInfo.Type.BaseType;
 				do
 				{
-					inheritanceStack.Push(linkGenerator.GenerateLink(currentType));
+					inheritanceStack.Push(htmlFormatter.Format(currentType, generateLinks: true));
 					currentType = currentType.BaseType;
 				}
 				while (currentType != null);
@@ -93,8 +94,7 @@ namespace CsvHelper.DocsGenerator.Generators
 				content.AppendLine("- | -");
 				foreach (var constructorInfo in typeInfo.Constructors)
 				{
-					var parameters = constructorInfo.Parameters.Select(p => linkGenerator.GenerateLink(p.ParameterType));
-					content.AppendLine($"{typeInfo.Type.GetTitle()}({string.Join(", ", parameters)}) | {constructorInfo.Summary}");
+					content.AppendLine($"{htmlFormatter.Format(constructorInfo.Constructor)} | {constructorInfo.Summary}");
 				}
 			}
 
@@ -141,8 +141,7 @@ namespace CsvHelper.DocsGenerator.Generators
 				content.AppendLine("- | -");
 				foreach (var method in typeInfo.Methods)
 				{
-					var parameters = string.Join(", ", method.Parameters.Select(p => linkGenerator.GenerateLink(p.ParameterType)));
-					content.AppendLine($"{method.Name}({parameters}) | {method.Summary}");
+					content.AppendLine($"{htmlFormatter.Format(method.Method)} | {method.Summary}");
 				}
 			}
 		}

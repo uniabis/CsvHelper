@@ -14,9 +14,7 @@ namespace CsvHelper.DocsGenerator.Infos
 	[DebuggerDisplay("Name = {Name}")]
 	public class TypeInfo : Info
     {
-		private static LinkGenerator linkGenerator = new LinkGenerator();
-
-		public NamespaceInfo Namespace { get; private set; }
+		private static readonly LinkGenerator linkGenerator = new LinkGenerator();
 
 		public Type Type { get; private set; }
 
@@ -32,7 +30,7 @@ namespace CsvHelper.DocsGenerator.Infos
 
 		public List<MethodInfo> Methods { get; private set; }
 
-		public TypeInfo(NamespaceInfo namespaceInfo, Type type, XElement xmlDocs)
+		public TypeInfo(Type type, XElement xmlDocs)
 		{
 			Type = type;
 
@@ -40,9 +38,12 @@ namespace CsvHelper.DocsGenerator.Infos
 
 			FullName = type.FullName;
 
-			Namespace = namespaceInfo;
+			Summary = ParseSummary(xmlDocFormatter.Format(type), xmlDocs);
 
-			Summary = ParseSummary($"T:{type.FullName}", xmlDocs);
+			if (Summary == null)
+			{
+				Console.WriteLine($"No summary found for '{xmlDocFormatter.Format(type)}'.");
+			}
 
 			Interfaces = type.GetInterfaces().ToList();
 

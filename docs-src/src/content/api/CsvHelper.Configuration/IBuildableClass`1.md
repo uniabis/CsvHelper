@@ -1,4 +1,4 @@
-# IBuildableClass&lt;TClass&gt; Interface
+# IBuildableClass<TClass> Interface
 
 Namespace: [CsvHelper.Configuration](/api/CsvHelper.Configuration)
 
@@ -11,4 +11,4 @@ public interface IBuildableClass<TClass> :
 ## Methods
 &nbsp; | &nbsp;
 - | -
-Build() | 
+Build() | Builds the ``CsvHelper.Configuration.ClassMap`1`` .
