@@ -8,9 +8,9 @@ Write dynamic records.
 public class DynamicRecordWriter : RecordWriter
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [RecordWriter](/api/CsvHelper.Expressions/RecordWriter) -> DynamicRecordWriter
+Inheritance Object -> RecordWriter -> DynamicRecordWriter
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-DynamicRecordWriter([CsvWriter](/api/CsvHelper/CsvWriter)) | Initializes a new instance using the given writer.
+DynamicRecordWriter(CsvWriter) | Initializes a new instance using the given writer.

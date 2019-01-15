@@ -9,7 +9,7 @@ Options for converting byte arrays.
 public enum ByteArrayConverterOptions 
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [ValueType](https://docs.microsoft.com/en-us/dotnet/api/system.valuetype) -> [Enum](https://docs.microsoft.com/en-us/dotnet/api/system.enum) -> ByteArrayConverterOptions
+Inheritance Object -> ValueType -> Enum -> ByteArrayConverterOptions
 
 ## Fields
 &nbsp; | &nbsp;

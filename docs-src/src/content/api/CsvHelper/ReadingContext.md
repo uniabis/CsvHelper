@@ -8,12 +8,12 @@ CSV reading state.
 public class ReadingContext : IDisposable
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> ReadingContext
+Inheritance Object -> ReadingContext
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-ReadingContext([TextReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader), [Configuration](/api/CsvHelper.Configuration/Configuration), [Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean)) | Initializes a new instance.
+ReadingContext(TextReader, Configuration, Boolean) | Initializes a new instance.
 
 ## Fields
 &nbsp; | &nbsp;
@@ -58,5 +58,5 @@ ReaderConfiguration | Gets the ``CsvHelper.CsvReader`` configuration.
 ## Methods
 &nbsp; | &nbsp;
 - | -
-ClearCache([Caches](/api/CsvHelper/Caches)) | Clears the specified caches.
+ClearCache(Caches) | Clears the specified caches.
 Dispose() | Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.

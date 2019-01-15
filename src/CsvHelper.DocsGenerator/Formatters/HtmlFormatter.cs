@@ -10,8 +10,10 @@ namespace CsvHelper.DocsGenerator.Formatters
 {
     public class HtmlFormatter
     {        
-		public string Format(Type type, bool generateLinks = false)
+		public string Format(Type type, bool generateLinks = false, bool isCodeBlock = false)
 		{
+			var symbols = isCodeBlock ? Symbols.Code : Symbols.Html;
+
 			var @namespace = type.Namespace;
 			var name = type.Name;
 
@@ -37,14 +39,16 @@ namespace CsvHelper.DocsGenerator.Formatters
 			if (genericArguments.Count > 0)
 			{
 				name = name.Substring(0, name.IndexOf('`'));
-				genericArgumentsText = $"<{string.Join(", ", genericArguments.Select(a => Format(a)))}>";
+				genericArgumentsText = $"{symbols["<"]}{string.Join(", ", genericArguments.Select(a => Format(a)))}{symbols[">"]}";
 			}
 
 			return $"{name}{genericArgumentsText}";
 		}
 
-		public string Format(MethodBase methodInfo)
+		public string Format(MethodBase methodInfo, bool generateLinks = false, bool isCodeBlock = false)
 		{
+			var symbols = isCodeBlock ? Symbols.Code : Symbols.Html;
+
 			var @namespace = methodInfo.DeclaringType.Namespace;
 			var typeName = methodInfo.DeclaringType.Name;
 			var methodName = methodInfo.Name;
@@ -58,7 +62,7 @@ namespace CsvHelper.DocsGenerator.Formatters
 				genericArguments = methodInfo.GetGenericArguments().ToList();
 				if (genericArguments.Count > 0)
 				{
-					genericArgumentsText = $"&lt;{string.Join(", ", genericArguments.Select(a => Format(a)))}&gt;";
+					genericArgumentsText = $"{symbols["<"]}{string.Join(", ", genericArguments.Select(a => Format(a)))}{symbols[">"]}";
 				}
 			}
 
@@ -71,23 +75,23 @@ namespace CsvHelper.DocsGenerator.Formatters
 				parametersText = string.Join(", ", parameters.Select(p =>
 				{
 					// Don't generate links if the type is a generic parameter.
-					var generateLinks = 
+					var shouldGenerateLinks = generateLinks &&
 					!(
 						typeGenericArguments.Any(a => $"{a.Namespace}.{a.Name}" == $"{p.ParameterType.Namespace}.{p.ParameterType.Name}") ||
 						genericArguments.Any(a => $"{a.Namespace}.{a.Name}" == $"{p.ParameterType.Namespace}.{p.ParameterType.Name}")
 					);
 
 					var outText = p.IsOut ? "out " : string.Empty;
-					return $"{outText}{Format(p.ParameterType, generateLinks)}";
+					return $"{outText}{Format(p.ParameterType, shouldGenerateLinks)}";
 				}));
 			}
 
 			return $"{name}{genericArgumentsText}({parametersText})";
 		}
 
-		public string Format(MemberInfo memberInfo)
+		public string Format(MemberInfo memberInfo, bool generateLinks = false, bool isCodeBlock = false)
 		{
-			return $"";
+			return memberInfo.Name;
 		}
     }
 }

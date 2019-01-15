@@ -12,11 +12,13 @@ namespace CsvHelper.DocsGenerator.Infos
 	[DebuggerDisplay("Name = {Name}")]
 	public class AssemblyInfo : Info
     {
+		public Assembly Assembly { get; protected set; }
+
 		public List<NamespaceInfo> Namespaces { get; private set; }
 
 		public AssemblyInfo(Assembly assembly, XElement xmlDocs)
 		{
-			Name = assembly.GetName().Name;
+			Assembly = assembly;
 
 			Namespaces =
 			(

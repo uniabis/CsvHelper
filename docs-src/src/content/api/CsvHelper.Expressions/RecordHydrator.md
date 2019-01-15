@@ -8,12 +8,12 @@ Hydrates members of an existing record.
 public class RecordHydrator : 
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> RecordHydrator
+Inheritance Object -> RecordHydrator
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-RecordHydrator([CsvReader](/api/CsvHelper/CsvReader)) | Creates a new instance using the given reader.
+RecordHydrator(CsvReader) | Creates a new instance using the given reader.
 
 ## Methods
 &nbsp; | &nbsp;

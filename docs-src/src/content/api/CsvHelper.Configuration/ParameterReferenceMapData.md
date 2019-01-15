@@ -9,12 +9,12 @@ The configuration data for the reference map.
 public class ParameterReferenceMapData : 
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> ParameterReferenceMapData
+Inheritance Object -> ParameterReferenceMapData
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-ParameterReferenceMapData([ParameterInfo](https://docs.microsoft.com/en-us/dotnet/api/system.reflection.parameterinfo), [ClassMap](/api/CsvHelper.Configuration/ClassMap)) | Initializes a new instance of the ``CsvHelper.Configuration.ParameterReferenceMapData`` class.
+ParameterReferenceMapData(ParameterInfo, ClassMap) | Initializes a new instance of the ``CsvHelper.Configuration.ParameterReferenceMapData`` class.
 
 ## Properties
 &nbsp; | &nbsp;

@@ -9,13 +9,13 @@ The string values used to represent a boolean false when converting.
 public class BooleanFalseValuesAttribute : Attribute
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [Attribute](https://docs.microsoft.com/en-us/dotnet/api/system.attribute) -> BooleanFalseValuesAttribute
+Inheritance Object -> Attribute -> BooleanFalseValuesAttribute
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-BooleanFalseValuesAttribute([String](https://docs.microsoft.com/en-us/dotnet/api/system.string)) | The string values used to represent a boolean false when converting.
-BooleanFalseValuesAttribute([String[]](https://docs.microsoft.com/en-us/dotnet/api/system.string[])) | The string values used to represent a boolean false when converting.
+BooleanFalseValuesAttribute(String) | The string values used to represent a boolean false when converting.
+BooleanFalseValuesAttribute(String[]) | The string values used to represent a boolean false when converting.
 
 ## Properties
 &nbsp; | &nbsp;

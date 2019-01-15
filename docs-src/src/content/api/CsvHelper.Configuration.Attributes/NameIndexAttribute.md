@@ -9,12 +9,12 @@ When reading, is used to get the index of the name used when there are multiple 
 public class NameIndexAttribute : Attribute
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [Attribute](https://docs.microsoft.com/en-us/dotnet/api/system.attribute) -> NameIndexAttribute
+Inheritance Object -> Attribute -> NameIndexAttribute
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-NameIndexAttribute([Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)) | When reading, is used to get the index of the name used when there are multiple names that are the same.
+NameIndexAttribute(Int32) | When reading, is used to get the index of the name used when there are multiple names that are the same.
 
 ## Properties
 &nbsp; | &nbsp;

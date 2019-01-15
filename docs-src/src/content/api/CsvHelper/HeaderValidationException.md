@@ -8,14 +8,14 @@ Represents a header validation failure.
 public class HeaderValidationException : ValidationException, ISerializable
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception) -> [CsvHelperException](/api/CsvHelper/CsvHelperException) -> [ValidationException](/api/CsvHelper/ValidationException) -> HeaderValidationException
+Inheritance Object -> Exception -> CsvHelperException -> ValidationException -> HeaderValidationException
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-HeaderValidationException([ReadingContext](/api/CsvHelper/ReadingContext), [String[]](https://docs.microsoft.com/en-us/dotnet/api/system.string[]), [Nullable<Int32>) | Initializes a new instance of the ``CsvHelper.ValidationException`` class.
-HeaderValidationException([ReadingContext](/api/CsvHelper/ReadingContext), [String[]](https://docs.microsoft.com/en-us/dotnet/api/system.string[]), [Nullable<Int32>, [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)) | Initializes a new instance of the ``CsvHelper.ValidationException`` class with a specified error message.
-HeaderValidationException([ReadingContext](/api/CsvHelper/ReadingContext), [String[]](https://docs.microsoft.com/en-us/dotnet/api/system.string[]), [Nullable<Int32>, [String](https://docs.microsoft.com/en-us/dotnet/api/system.string), [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)) | Initializes a new instance of the ``CsvHelper.ValidationException`` class with a specified error message and a reference to the inner exception that is the cause of this exception.
+HeaderValidationException(ReadingContext, String[], Nullable&lt;Int32&gt;) | Initializes a new instance of the ``CsvHelper.ValidationException`` class.
+HeaderValidationException(ReadingContext, String[], Nullable&lt;Int32&gt;, String) | Initializes a new instance of the ``CsvHelper.ValidationException`` class with a specified error message.
+HeaderValidationException(ReadingContext, String[], Nullable&lt;Int32&gt;, String, Exception) | Initializes a new instance of the ``CsvHelper.ValidationException`` class with a specified error message and a reference to the inner exception that is the cause of this exception.
 
 ## Properties
 &nbsp; | &nbsp;

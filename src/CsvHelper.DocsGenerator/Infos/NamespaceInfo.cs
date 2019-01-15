@@ -11,7 +11,9 @@ namespace CsvHelper.DocsGenerator.Infos
 	[DebuggerDisplay("Name = {Name}")]
 	public class NamespaceInfo : Info
     {
-		public AssemblyInfo Assembly { get; private set; }
+		public AssemblyInfo Assembly { get; protected set; }
+
+		public string Namespace { get; protected set; }
 
 		public List<TypeInfo> Types { get; private set; } = new List<TypeInfo>();
 
@@ -25,7 +27,7 @@ namespace CsvHelper.DocsGenerator.Infos
 		{
 			Assembly = assemblyInfo;
 
-			Name = @namespace;
+			Namespace = @namespace;
 
 			foreach (var type in types)
 			{

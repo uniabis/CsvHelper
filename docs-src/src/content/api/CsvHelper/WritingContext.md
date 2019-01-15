@@ -8,12 +8,12 @@ CSV writing state.
 public class WritingContext : IDisposable
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> WritingContext
+Inheritance Object -> WritingContext
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-WritingContext([TextWriter](https://docs.microsoft.com/en-us/dotnet/api/system.io.textwriter), [Configuration](/api/CsvHelper.Configuration/Configuration), [Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean)) | Initializes a new instance.
+WritingContext(TextWriter, Configuration, Boolean) | Initializes a new instance.
 
 ## Properties
 &nbsp; | &nbsp;
@@ -33,5 +33,5 @@ WriterConfiguration | Gets the writer configuration.
 ## Methods
 &nbsp; | &nbsp;
 - | -
-ClearCache([Caches](/api/CsvHelper/Caches)) | Clears the specified caches.
+ClearCache(Caches) | Clears the specified caches.
 Dispose() | Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.

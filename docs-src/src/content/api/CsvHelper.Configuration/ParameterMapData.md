@@ -9,12 +9,12 @@ The constructor paramter data for the map.
 public class ParameterMapData : 
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> ParameterMapData
+Inheritance Object -> ParameterMapData
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-ParameterMapData([ParameterInfo](https://docs.microsoft.com/en-us/dotnet/api/system.reflection.parameterinfo)) | Initializes a new instance of the ``CsvHelper.Configuration.ParameterMapData`` class.
+ParameterMapData(ParameterInfo) | Initializes a new instance of the ``CsvHelper.Configuration.ParameterMapData`` class.
 
 ## Properties
 &nbsp; | &nbsp;

@@ -14,22 +14,8 @@ namespace CsvHelper.DocsGenerator.Generators
 
 		protected override void GenerateContent()
 		{
-			var fileType = string.Empty;
-			if (typeInfo.Type.IsEnum)
-			{
-				fileType = "Enum";
-			}
-			else if (typeInfo.Type.IsInterface)
-			{
-				fileType = "Interface";
-			}
-			else if (typeInfo.Type.IsClass)
-			{
-				fileType = "Class";
-			}
-
 			// Title
-			content.AppendLine($"# {htmlFormatter.Format(typeInfo.Type)} {fileType}");
+			content.AppendLine($"# {typeInfo.Type.GetHtmlName()} {typeInfo.Type.GetTypeName()}");
 
 			// Namespace
 			content.AppendLine();
@@ -37,24 +23,17 @@ namespace CsvHelper.DocsGenerator.Generators
 
 			// Summary
 			content.AppendLine();
-			content.AppendLine(typeInfo.Summary);
+			content.AppendLine(typeInfo.Type.GetSummary());
 
 			// Definition
 			content.AppendLine();
 			content.AppendLine("```cs");
 			foreach (var attribute in typeInfo.Attributes)
 			{
-				content.AppendLine($"[{attribute.Namespace}.{htmlFormatter.Format(attribute)}]");
+				content.AppendLine($"[{attribute.GetFullCodeName()}]");
 			}
 
-			var inheritance = new List<string>();
-			if (typeInfo.Type.BaseType != null && typeInfo.Type.BaseType != typeof(object))
-			{
-				inheritance.Add(htmlFormatter.Format(typeInfo.Type.BaseType));
-			}
-
-			inheritance.AddRange(typeInfo.Interfaces.Select(i => htmlFormatter.Format(i)));
-			var inheritanceText = typeInfo.Type.IsEnum ? string.Empty : $": {string.Join(", ", inheritance)}";
+			var inheritanceText = typeInfo.Type.IsEnum ? string.Empty : $": {string.Join(", ", typeInfo.Implementers.Select(i => i.GetCodeName()))}";
 			var typeModifier = string.Empty;
 			if (typeInfo.Type.IsAbstract && typeInfo.Type.IsSealed && !typeInfo.Type.IsInterface)
 			{
@@ -65,24 +44,14 @@ namespace CsvHelper.DocsGenerator.Generators
 				typeModifier = "abstract ";
 			}
 
-			content.AppendLine($"public {typeModifier}{fileType.ToLower()} {htmlFormatter.Format(typeInfo.Type)} {inheritanceText}");
+			content.AppendLine($"public {typeModifier}{typeInfo.Type.GetTypeName().ToLower()} {typeInfo.Type.GetCodeName()} {inheritanceText}");
 			content.AppendLine("```");
 
 			// Inheritance
-			if (typeInfo.Type.BaseType != null)
+			if (typeInfo.Inheritance.Count > 0)
 			{
-				var inheritanceStack = new Stack<string>();
-				inheritanceStack.Push(typeInfo.Type.GetDisplayName());
-				var currentType = typeInfo.Type.BaseType;
-				do
-				{
-					inheritanceStack.Push(htmlFormatter.Format(currentType, generateLinks: true));
-					currentType = currentType.BaseType;
-				}
-				while (currentType != null);
-
 				content.AppendLine();
-				content.AppendLine($"Inheritance {string.Join(" -> ", inheritanceStack)}");
+				content.AppendLine($"Inheritance {string.Join(" -> ", typeInfo.Inheritance.Select(t => t.GetHtmlName()))}");
 			}
 
 			// Constructors
@@ -94,7 +63,7 @@ namespace CsvHelper.DocsGenerator.Generators
 				content.AppendLine("- | -");
 				foreach (var constructorInfo in typeInfo.Constructors)
 				{
-					content.AppendLine($"{htmlFormatter.Format(constructorInfo.Constructor)} | {constructorInfo.Summary}");
+					content.AppendLine($"{constructorInfo.Constructor.GetHtmlName()} | {constructorInfo.Constructor.GetSummary()}");
 				}
 			}
 
@@ -107,7 +76,7 @@ namespace CsvHelper.DocsGenerator.Generators
 				content.AppendLine("- | -");
 				foreach (var field in typeInfo.Fields)
 				{
-					content.AppendLine($"{field.Name} | {field.Summary}");
+					content.AppendLine($"{field.GetHtmlName()} | {field.GetSummary()}");
 				}
 			}
 
@@ -123,11 +92,11 @@ namespace CsvHelper.DocsGenerator.Generators
 					if (property.IndexParameters.Count > 0)
 					{
 						var parameters = string.Join(", ", property.IndexParameters.Select(ip => linkGenerator.GenerateLink(ip.ParameterType)));
-						content.AppendLine($"this[{parameters}] | {property.Summary}");
+						content.AppendLine($"this[{parameters}] | {property.Property.GetSummary()}");
 					}
 					else
 					{
-						content.AppendLine($"{property.Name} | {property.Summary}");
+						content.AppendLine($"{property.Property.GetHtmlName()} | {property.Property.GetSummary()}");
 					}
 				}
 			}
@@ -141,7 +110,7 @@ namespace CsvHelper.DocsGenerator.Generators
 				content.AppendLine("- | -");
 				foreach (var method in typeInfo.Methods)
 				{
-					content.AppendLine($"{htmlFormatter.Format(method.Method)} | {method.Summary}");
+					content.AppendLine($"{method.Method.GetHtmlName()} | {method.Method.GetSummary()}");
 				}
 			}
 		}

@@ -9,12 +9,12 @@ The ``CsvHelper.Configuration.Attributes.NumberStylesAttribute.NumberStyles`` to
 public class NumberStylesAttribute : Attribute
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [Attribute](https://docs.microsoft.com/en-us/dotnet/api/system.attribute) -> NumberStylesAttribute
+Inheritance Object -> Attribute -> NumberStylesAttribute
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-NumberStylesAttribute([NumberStyles](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.numberstyles)) | The ``CsvHelper.Configuration.Attributes.NumberStylesAttribute.NumberStyles`` to use when type converting. This is used when doing any number conversions.
+NumberStylesAttribute(NumberStyles) | The ``CsvHelper.Configuration.Attributes.NumberStylesAttribute.NumberStyles`` to use when type converting. This is used when doing any number conversions.
 
 ## Properties
 &nbsp; | &nbsp;

@@ -8,14 +8,14 @@ Converts an ``System.Enum`` to and from a ``System.String`` .
 public class EnumConverter : DefaultTypeConverter, ITypeConverter
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [DefaultTypeConverter](/api/CsvHelper.TypeConversion/DefaultTypeConverter) -> EnumConverter
+Inheritance Object -> DefaultTypeConverter -> EnumConverter
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-EnumConverter([Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)) | Creates a new ``CsvHelper.TypeConversion.EnumConverter`` for the given ``System.Enum`` ``System.Type`` .
+EnumConverter(Type) | Creates a new ``CsvHelper.TypeConversion.EnumConverter`` for the given ``System.Enum`` ``System.Type`` .
 
 ## Methods
 &nbsp; | &nbsp;
 - | -
-ConvertFromString([String](https://docs.microsoft.com/en-us/dotnet/api/system.string), [IReaderRow](/api/CsvHelper/IReaderRow), [MemberMapData](/api/CsvHelper.Configuration/MemberMapData)) | Converts the string to an object.
+ConvertFromString(String, IReaderRow, MemberMapData) | Converts the string to an object.

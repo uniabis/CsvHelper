@@ -8,9 +8,9 @@ Writes objects.
 public class ObjectRecordWriter : RecordWriter
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [RecordWriter](/api/CsvHelper.Expressions/RecordWriter) -> ObjectRecordWriter
+Inheritance Object -> RecordWriter -> ObjectRecordWriter
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-ObjectRecordWriter([CsvWriter](/api/CsvHelper/CsvWriter)) | Initializes a new instance using the given writer.
+ObjectRecordWriter(CsvWriter) | Initializes a new instance using the given writer.

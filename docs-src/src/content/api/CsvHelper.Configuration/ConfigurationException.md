@@ -9,11 +9,11 @@ Represents configuration errors that occur.
 public class ConfigurationException : CsvHelperException, ISerializable
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception) -> [CsvHelperException](/api/CsvHelper/CsvHelperException) -> ConfigurationException
+Inheritance Object -> Exception -> CsvHelperException -> ConfigurationException
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
 ConfigurationException() | Initializes a new instance of the ``CsvHelper.Configuration.ConfigurationException`` class.
-ConfigurationException([String](https://docs.microsoft.com/en-us/dotnet/api/system.string)) | Initializes a new instance of the ``CsvHelper.Configuration.ConfigurationException`` class with a specified error message.
-ConfigurationException([String](https://docs.microsoft.com/en-us/dotnet/api/system.string), [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)) | Initializes a new instance of the ``CsvHelper.Configuration.ConfigurationException`` class with a specified error message and a reference to the inner exception that is the cause of this exception.
+ConfigurationException(String) | Initializes a new instance of the ``CsvHelper.Configuration.ConfigurationException`` class with a specified error message.
+ConfigurationException(String, Exception) | Initializes a new instance of the ``CsvHelper.Configuration.ConfigurationException`` class with a specified error message and a reference to the inner exception that is the cause of this exception.

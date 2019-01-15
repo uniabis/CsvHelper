@@ -1,4 +1,4 @@
-# IHasNameOptions<TClass, TMember> Interface
+# IHasNameOptions&lt;TClass, TMember&gt; Interface
 
 Namespace: [CsvHelper.Configuration](/api/CsvHelper.Configuration)
 

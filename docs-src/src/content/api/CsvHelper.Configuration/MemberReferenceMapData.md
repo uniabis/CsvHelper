@@ -8,12 +8,12 @@ The configuration data for the reference map.
 public class MemberReferenceMapData : 
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> MemberReferenceMapData
+Inheritance Object -> MemberReferenceMapData
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-MemberReferenceMapData([MemberInfo](https://docs.microsoft.com/en-us/dotnet/api/system.reflection.memberinfo), [ClassMap](/api/CsvHelper.Configuration/ClassMap)) | Initializes a new instance of the ``CsvHelper.Configuration.MemberReferenceMapData`` class.
+MemberReferenceMapData(MemberInfo, ClassMap) | Initializes a new instance of the ``CsvHelper.Configuration.MemberReferenceMapData`` class.
 
 ## Properties
 &nbsp; | &nbsp;

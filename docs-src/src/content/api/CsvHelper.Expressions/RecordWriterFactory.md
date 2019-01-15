@@ -8,12 +8,12 @@ Factory to create record writers.
 public class RecordWriterFactory : 
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> RecordWriterFactory
+Inheritance Object -> RecordWriterFactory
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-RecordWriterFactory([CsvWriter](/api/CsvHelper/CsvWriter)) | Initializes a new instance using the given writer.
+RecordWriterFactory(CsvWriter) | Initializes a new instance using the given writer.
 
 ## Methods
 &nbsp; | &nbsp;

@@ -32,10 +32,10 @@ UseNewObjectForNullReferenceMembers | Gets or sets a value indicating that durin
 &nbsp; | &nbsp;
 - | -
 AutoMap&lt;T&gt;() | Generates a ``CsvHelper.Configuration.ClassMap`` for the type.
-AutoMap([Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)) | Generates a ``CsvHelper.Configuration.ClassMap`` for the type.
+AutoMap(Type) | Generates a ``CsvHelper.Configuration.ClassMap`` for the type.
 RegisterClassMap&lt;TMap&gt;() | Use a ``CsvHelper.Configuration.ClassMap`1`` to configure mappings. When using a class map, no member are mapped by default. Only member specified in the mapping are used.
-RegisterClassMap([Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)) | Use a ``CsvHelper.Configuration.ClassMap`1`` to configure mappings. When using a class map, no member are mapped by default. Only member specified in the mapping are used.
-RegisterClassMap([ClassMap](/api/CsvHelper.Configuration/ClassMap)) | Registers the class map.
+RegisterClassMap(Type) | Use a ``CsvHelper.Configuration.ClassMap`1`` to configure mappings. When using a class map, no member are mapped by default. Only member specified in the mapping are used.
+RegisterClassMap(ClassMap) | Registers the class map.
 UnregisterClassMap&lt;TMap&gt;() | Unregisters the class map.
-UnregisterClassMap([Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)) | Unregisters the class map.
+UnregisterClassMap(Type) | Unregisters the class map.
 UnregisterClassMap() | Unregisters all class maps.

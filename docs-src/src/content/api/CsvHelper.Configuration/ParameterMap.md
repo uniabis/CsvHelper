@@ -9,12 +9,12 @@ Mapping for a constructor parameter. This may contain value type data, a constru
 public class ParameterMap : 
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> ParameterMap
+Inheritance Object -> ParameterMap
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-ParameterMap([ParameterInfo](https://docs.microsoft.com/en-us/dotnet/api/system.reflection.parameterinfo)) | Creates an instance of ``CsvHelper.Configuration.ParameterMap`` using the given information.
+ParameterMap(ParameterInfo) | Creates an instance of ``CsvHelper.Configuration.ParameterMap`` using the given information.
 
 ## Properties
 &nbsp; | &nbsp;

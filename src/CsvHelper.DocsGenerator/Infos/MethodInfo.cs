@@ -20,20 +20,9 @@ namespace CsvHelper.DocsGenerator.Infos
 		{
 			Method = methodInfo;
 
-			Name = methodInfo.GetName();
-
-			FullName = methodInfo.GetFullName();
-
 			Parameters = methodInfo.GetParameters().ToList();
 
 			GenericArguments = methodInfo.GetGenericArguments().ToList();
-
-			Summary = ParseSummary(xmlDocFormatter.Format(methodInfo), xmlDocs);
-
-			if (Summary == null)
-			{
-				Console.WriteLine($"No summary found for '{xmlDocFormatter.Format(methodInfo)}'.");
-			}
 		}
 	}
 }

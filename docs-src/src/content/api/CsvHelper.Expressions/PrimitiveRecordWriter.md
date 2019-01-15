@@ -8,9 +8,9 @@ Writes primitives.
 public class PrimitiveRecordWriter : RecordWriter
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [RecordWriter](/api/CsvHelper.Expressions/RecordWriter) -> PrimitiveRecordWriter
+Inheritance Object -> RecordWriter -> PrimitiveRecordWriter
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-PrimitiveRecordWriter([CsvWriter](/api/CsvHelper/CsvWriter)) | Initializes a new instance using the given writer.
+PrimitiveRecordWriter(CsvWriter) | Initializes a new instance using the given writer.

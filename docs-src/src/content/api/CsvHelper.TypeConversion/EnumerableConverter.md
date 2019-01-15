@@ -8,10 +8,10 @@ Throws an exception when used. This is here so that it's apparent that there is 
 public class EnumerableConverter : DefaultTypeConverter, ITypeConverter
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [DefaultTypeConverter](/api/CsvHelper.TypeConversion/DefaultTypeConverter) -> EnumerableConverter
+Inheritance Object -> DefaultTypeConverter -> EnumerableConverter
 
 ## Methods
 &nbsp; | &nbsp;
 - | -
-ConvertFromString([String](https://docs.microsoft.com/en-us/dotnet/api/system.string), [IReaderRow](/api/CsvHelper/IReaderRow), [MemberMapData](/api/CsvHelper.Configuration/MemberMapData)) | Throws an exception.
-ConvertToString([Object](https://docs.microsoft.com/en-us/dotnet/api/system.object), [IWriterRow](/api/CsvHelper/IWriterRow), [MemberMapData](/api/CsvHelper.Configuration/MemberMapData)) | Throws an exception.
+ConvertFromString(String, IReaderRow, MemberMapData) | Throws an exception.
+ConvertToString(Object, IWriterRow, MemberMapData) | Throws an exception.

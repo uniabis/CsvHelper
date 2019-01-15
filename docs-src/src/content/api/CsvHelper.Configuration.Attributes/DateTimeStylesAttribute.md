@@ -9,12 +9,12 @@ The ``CsvHelper.Configuration.Attributes.DateTimeStylesAttribute.DateTimeStyles`
 public class DateTimeStylesAttribute : Attribute
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [Attribute](https://docs.microsoft.com/en-us/dotnet/api/system.attribute) -> DateTimeStylesAttribute
+Inheritance Object -> Attribute -> DateTimeStylesAttribute
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-DateTimeStylesAttribute([DateTimeStyles](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.datetimestyles)) | The ``CsvHelper.Configuration.Attributes.DateTimeStylesAttribute.DateTimeStyles`` to use when type converting. This is used when doing any ``System.DateTime`` conversions.
+DateTimeStylesAttribute(DateTimeStyles) | The ``CsvHelper.Configuration.Attributes.DateTimeStylesAttribute.DateTimeStyles`` to use when type converting. This is used when doing any ``System.DateTime`` conversions.
 
 ## Properties
 &nbsp; | &nbsp;

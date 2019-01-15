@@ -8,12 +8,12 @@ Mapping info for a reference parameter mapping to a class.
 public class ParameterReferenceMap : 
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> ParameterReferenceMap
+Inheritance Object -> ParameterReferenceMap
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-ParameterReferenceMap([ParameterInfo](https://docs.microsoft.com/en-us/dotnet/api/system.reflection.parameterinfo), [ClassMap](/api/CsvHelper.Configuration/ClassMap)) | Initializes a new instance of the ``CsvHelper.Configuration.ParameterReferenceMap`` class.
+ParameterReferenceMap(ParameterInfo, ClassMap) | Initializes a new instance of the ``CsvHelper.Configuration.ParameterReferenceMap`` class.
 
 ## Properties
 &nbsp; | &nbsp;
@@ -23,4 +23,4 @@ Data | Gets the parameter reference map data.
 ## Methods
 &nbsp; | &nbsp;
 - | -
-Prefix([String](https://docs.microsoft.com/en-us/dotnet/api/system.string)) | Appends a prefix to the header of each field of the reference parameter.
+Prefix(String) | Appends a prefix to the header of each field of the reference parameter.

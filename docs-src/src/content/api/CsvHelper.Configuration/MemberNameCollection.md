@@ -9,7 +9,7 @@ A collection that holds member names.
 public class MemberNameCollection : IEnumerable<String>, IEnumerable
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> MemberNameCollection
+Inheritance Object -> MemberNameCollection
 
 ## Properties
 &nbsp; | &nbsp;
@@ -22,7 +22,7 @@ Prefix | Gets the prefix to use for each name.
 ## Methods
 &nbsp; | &nbsp;
 - | -
-Add([String](https://docs.microsoft.com/en-us/dotnet/api/system.string)) | Adds the given name to the collection.
-AddRange([IEnumerable<String>) | Adds a range of names to the collection.
+Add(String) | Adds the given name to the collection.
+AddRange(IEnumerable&lt;String&gt;) | Adds a range of names to the collection.
 Clear() | Clears all names from the collection.
 GetEnumerator() | Returns an enumerator that iterates through the collection.

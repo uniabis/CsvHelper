@@ -14,7 +14,7 @@ namespace CsvHelper.DocsGenerator.Generators
 
 		protected override void GenerateContent()
 		{
-			content.AppendLine($"# {namespaceInfo.Name} Namespace");
+			content.AppendLine($"# {namespaceInfo.Namespace} Namespace");
 
 			if (namespaceInfo.Classes.Count > 0)
 			{
@@ -24,7 +24,7 @@ namespace CsvHelper.DocsGenerator.Generators
 				content.AppendLine("- | -");
 				foreach (var typeInfo in namespaceInfo.Classes)
 				{
-					content.AppendLine($"[{typeInfo.Name}](/api/{namespaceInfo.Name}/{typeInfo.Name}) | {typeInfo.Summary}");
+					content.AppendLine($"[{typeInfo.Type.GetHtmlName()}](/api/{namespaceInfo.Namespace}/{typeInfo.Type.GetHtmlName()}) | {typeInfo.Type.GetSummary()}");
 				}
 			}
 
@@ -36,7 +36,7 @@ namespace CsvHelper.DocsGenerator.Generators
 				content.AppendLine("- | -");
 				foreach (var typeInfo in namespaceInfo.Interfaces)
 				{
-					content.AppendLine($"[{typeInfo.Name}](/api/{namespaceInfo.Name}/{typeInfo.Name}) | {typeInfo.Summary}");
+					content.AppendLine($"[{typeInfo.Type.GetHtmlName()}](/api/{namespaceInfo.Namespace}/{typeInfo.Type.Name}) | {typeInfo.Type.GetSummary()}");
 				}
 			}
 
@@ -48,7 +48,7 @@ namespace CsvHelper.DocsGenerator.Generators
 				content.AppendLine("- | -");
 				foreach (var typeInfo in namespaceInfo.Enums)
 				{
-					content.AppendLine($"[{typeInfo.Name}](/api/{namespaceInfo.Name}/{typeInfo.Name}) | {typeInfo.Summary}");
+					content.AppendLine($"[{typeInfo.Type.GetHtmlName()}](/api/{namespaceInfo.Namespace}/{typeInfo.Type.Name}) | {typeInfo.Type.GetSummary()}");
 				}
 			}
 		}

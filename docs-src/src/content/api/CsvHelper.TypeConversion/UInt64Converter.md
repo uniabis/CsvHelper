@@ -8,9 +8,9 @@ Converts a ``System.UInt64`` to and from a ``System.String`` .
 public class UInt64Converter : DefaultTypeConverter, ITypeConverter
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [DefaultTypeConverter](/api/CsvHelper.TypeConversion/DefaultTypeConverter) -> UInt64Converter
+Inheritance Object -> DefaultTypeConverter -> UInt64Converter
 
 ## Methods
 &nbsp; | &nbsp;
 - | -
-ConvertFromString([String](https://docs.microsoft.com/en-us/dotnet/api/system.string), [IReaderRow](/api/CsvHelper/IReaderRow), [MemberMapData](/api/CsvHelper.Configuration/MemberMapData)) | Converts the string to an object.
+ConvertFromString(String, IReaderRow, MemberMapData) | Converts the string to an object.

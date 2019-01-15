@@ -8,12 +8,12 @@ Base implementation for classes that write records.
 public abstract class RecordWriter : 
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> RecordWriter
+Inheritance Object -> RecordWriter
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-RecordWriter([CsvWriter](/api/CsvHelper/CsvWriter)) | Initializes a new instance using the given writer.
+RecordWriter(CsvWriter) | Initializes a new instance using the given writer.
 
 ## Methods
 &nbsp; | &nbsp;

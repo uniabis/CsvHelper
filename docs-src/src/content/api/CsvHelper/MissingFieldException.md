@@ -9,11 +9,11 @@ Represents an error caused because a field is missing in the header while readin
 public class MissingFieldException : ReaderException, ISerializable
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception) -> [CsvHelperException](/api/CsvHelper/CsvHelperException) -> [ReaderException](/api/CsvHelper/ReaderException) -> MissingFieldException
+Inheritance Object -> Exception -> CsvHelperException -> ReaderException -> MissingFieldException
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-MissingFieldException([ReadingContext](/api/CsvHelper/ReadingContext)) | Initializes a new instance of the ``CsvHelper.MissingFieldException`` class.
-MissingFieldException([ReadingContext](/api/CsvHelper/ReadingContext), [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)) | Initializes a new instance of the ``CsvHelper.MissingFieldException`` class with a specified error message.
-MissingFieldException([ReadingContext](/api/CsvHelper/ReadingContext), [String](https://docs.microsoft.com/en-us/dotnet/api/system.string), [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)) | Initializes a new instance of the ``CsvHelper.MissingFieldException`` class with a specified error message and a reference to the inner exception that is the cause of this exception.
+MissingFieldException(ReadingContext) | Initializes a new instance of the ``CsvHelper.MissingFieldException`` class.
+MissingFieldException(ReadingContext, String) | Initializes a new instance of the ``CsvHelper.MissingFieldException`` class with a specified error message.
+MissingFieldException(ReadingContext, String, Exception) | Initializes a new instance of the ``CsvHelper.MissingFieldException`` class with a specified error message and a reference to the inner exception that is the cause of this exception.

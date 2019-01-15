@@ -19,18 +19,7 @@ namespace CsvHelper.DocsGenerator.Infos
 		{
 			Constructor = constructorInfo;
 
-			Name = constructorInfo.DeclaringType.GetName();
-
-			FullName = constructorInfo.DeclaringType.GetFullName();
-
 			Parameters = constructorInfo.GetParameters().ToList();
-
-			Summary = ParseSummary(xmlDocFormatter.Format(constructorInfo), xmlDocs);
-
-			if (Summary == null)
-			{
-				Console.WriteLine($"No summary found for '{xmlDocFormatter.Format(constructorInfo)}'.");
-			}
 		}
 	}
 }

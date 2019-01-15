@@ -9,7 +9,7 @@ Flags for the type of members that can be used for auto mapping.
 public enum MemberTypes 
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [ValueType](https://docs.microsoft.com/en-us/dotnet/api/system.valuetype) -> [Enum](https://docs.microsoft.com/en-us/dotnet/api/system.enum) -> MemberTypes
+Inheritance Object -> ValueType -> Enum -> MemberTypes
 
 ## Fields
 &nbsp; | &nbsp;

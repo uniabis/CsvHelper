@@ -56,7 +56,7 @@ namespace CsvHelper.DocsGenerator
 			// Write namespace files and directories.
 			foreach (var @namespace in assemblyInfo.Namespaces)
 			{
-				var directoryPath = Path.Combine(outputDirectoryPath, @namespace.Name);
+				var directoryPath = Path.Combine(outputDirectoryPath, @namespace.Namespace);
 				if (!Directory.Exists(directoryPath))
 				{
 					Directory.CreateDirectory(directoryPath);
@@ -64,19 +64,19 @@ namespace CsvHelper.DocsGenerator
 
 				documentGenerator = documentGeneratorFactory.Create(@namespace);
 				content = documentGenerator.Generate();
-				filePath = Path.Join(outputDirectoryPath, $"{@namespace.Name}.md");
+				filePath = Path.Join(outputDirectoryPath, $"{@namespace.Namespace}.md");
 				File.WriteAllText(filePath, content);
 			}
 
 			// Write type files.
 			foreach (var @namespace in assemblyInfo.Namespaces)
 			{
-				var directoryPath = Path.Combine(outputDirectoryPath, @namespace.Name);
+				var directoryPath = Path.Combine(outputDirectoryPath, @namespace.Namespace);
 				foreach (var typeInfo in @namespace.Types)
 				{
 					documentGenerator = documentGeneratorFactory.Create(typeInfo);
 					content = documentGenerator.Generate();
-					filePath = Path.Combine(directoryPath, $"{typeInfo.Name}.md");
+					filePath = Path.Combine(directoryPath, $"{typeInfo.Type.Name}.md");
 					File.WriteAllText(filePath, content);
 				}
 			}
@@ -93,14 +93,14 @@ namespace CsvHelper.DocsGenerator
 					new JProperty("children", new JArray
 					(
 						assemblyInfo.Namespaces.Select(namespaceInfo => new JObject(
-							new JProperty("title", namespaceInfo.Name),
-							new JProperty("path", $"api/{namespaceInfo.Name}"),
+							new JProperty("title", namespaceInfo.Namespace),
+							new JProperty("path", $"api/{namespaceInfo.Namespace}"),
 							new JProperty("children", new JArray
 							(
 								namespaceInfo.Types.Select(typeInfo => new JObject
 								(
-									new JProperty("title", typeInfo.Type.GetDisplayName()),
-									new JProperty("path", $"api/{namespaceInfo.Name}/{typeInfo.Name}")
+									new JProperty("title", typeInfo.Type.Name),
+									new JProperty("path", $"api/{namespaceInfo.Namespace}/{typeInfo.Type.Name}")
 								))
 							))
 						))

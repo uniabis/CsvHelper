@@ -9,7 +9,7 @@ Options for trimming of fields.
 public enum TrimOptions 
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [ValueType](https://docs.microsoft.com/en-us/dotnet/api/system.valuetype) -> [Enum](https://docs.microsoft.com/en-us/dotnet/api/system.enum) -> TrimOptions
+Inheritance Object -> ValueType -> Enum -> TrimOptions
 
 ## Fields
 &nbsp; | &nbsp;

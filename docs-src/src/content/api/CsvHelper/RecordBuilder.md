@@ -8,13 +8,13 @@ Builds CSV records.
 public class RecordBuilder : 
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> RecordBuilder
+Inheritance Object -> RecordBuilder
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
 RecordBuilder() | Creates a new ``CsvHelper.RecordBuilder`` using defaults.
-RecordBuilder([Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)) | Creatse a new ``CsvHelper.RecordBuilder`` using the given capacity.
+RecordBuilder(Int32) | Creatse a new ``CsvHelper.RecordBuilder`` using the given capacity.
 
 ## Properties
 &nbsp; | &nbsp;
@@ -25,6 +25,6 @@ Length | The number of records.
 ## Methods
 &nbsp; | &nbsp;
 - | -
-Add([String](https://docs.microsoft.com/en-us/dotnet/api/system.string)) | Adds a new field to the ``CsvHelper.RecordBuilder`` .
+Add(String) | Adds a new field to the ``CsvHelper.RecordBuilder`` .
 Clear() | Clears the records.
 ToArray() | Returns the record as an ``string[]`` .

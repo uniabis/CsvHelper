@@ -8,12 +8,12 @@ The configured data for the member map.
 public class MemberMapData : 
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> MemberMapData
+Inheritance Object -> MemberMapData
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-MemberMapData([MemberInfo](https://docs.microsoft.com/en-us/dotnet/api/system.reflection.memberinfo)) | Initializes a new instance of the ``CsvHelper.Configuration.MemberMapData`` class.
+MemberMapData(MemberInfo) | Initializes a new instance of the ``CsvHelper.Configuration.MemberMapData`` class.
 
 ## Properties
 &nbsp; | &nbsp;

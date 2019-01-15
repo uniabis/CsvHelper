@@ -9,25 +9,19 @@ namespace CsvHelper.DocsGenerator.Infos
 {
     public class PropertyInfo : Info
     {
-		public List<System.Reflection.ParameterInfo> IndexParameters { get; private set; }
+		public List<System.Reflection.ParameterInfo> IndexParameters { get; protected set; }
 
-		public PropertyInfo(System.Reflection.PropertyInfo propertyInfo, XElement xmlDocs)
+		public TypeInfo Type { get; protected set; }
+
+		public System.Reflection.PropertyInfo Property { get; protected set; }
+
+		public PropertyInfo(TypeInfo type, System.Reflection.PropertyInfo propertyInfo, XElement xmlDocs)
 		{
+			Type = type;
+
+			Property = propertyInfo;
+
 			IndexParameters = propertyInfo.GetIndexParameters().ToList();
-
-			Name = propertyInfo.Name;
-
-			FullName = $"{propertyInfo.DeclaringType.FullName}.{Name}";
-
-			if (IndexParameters.Count > 0)
-			{
-				var parameters = string.Join(",", IndexParameters.Select(p => p.ParameterType.FullName));
-				Summary = ParseSummary($"P:{FullName}({parameters})", xmlDocs);
-			}
-			else
-			{
-				Summary = ParseSummary($"P:{FullName}", xmlDocs);
-			}
 		}
     }
 }

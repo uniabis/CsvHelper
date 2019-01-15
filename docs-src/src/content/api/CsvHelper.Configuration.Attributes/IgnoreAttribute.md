@@ -9,4 +9,4 @@ Ignore the member when reading and writing. If this member has already been mapp
 public class IgnoreAttribute : Attribute
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [Attribute](https://docs.microsoft.com/en-us/dotnet/api/system.attribute) -> IgnoreAttribute
+Inheritance Object -> Attribute -> IgnoreAttribute

@@ -9,13 +9,13 @@ The string values used to represent null when converting.
 public class NullValuesAttribute : Attribute
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [Attribute](https://docs.microsoft.com/en-us/dotnet/api/system.attribute) -> NullValuesAttribute
+Inheritance Object -> Attribute -> NullValuesAttribute
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-NullValuesAttribute([String](https://docs.microsoft.com/en-us/dotnet/api/system.string)) | The string values used to represent null when converting.
-NullValuesAttribute([String[]](https://docs.microsoft.com/en-us/dotnet/api/system.string[])) | The string values used to represent null when converting.
+NullValuesAttribute(String) | The string values used to represent null when converting.
+NullValuesAttribute(String[]) | The string values used to represent null when converting.
 
 ## Properties
 &nbsp; | &nbsp;

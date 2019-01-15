@@ -15,5 +15,5 @@ Flush() | Serializes the row to the ``System.IO.TextWriter`` .
 FlushAsync() | Serializes the row to the ``System.IO.TextWriter`` .
 NextRecord() | Ends writing of the current record and starts a new record. This automatically flushes the writer.
 NextRecordAsync() | Ends writing of the current record and starts a new record. This automatically flushes the writer.
-WriteRecords([IEnumerable](https://docs.microsoft.com/en-us/dotnet/api/system.collections.ienumerable)) | Writes the list of records to the CSV file.
-WriteRecords&lt;T&gt;([IEnumerable<T>) | Writes the list of records to the CSV file.
+WriteRecords(IEnumerable) | Writes the list of records to the CSV file.
+WriteRecords&lt;T&gt;(IEnumerable&lt;T&gt;) | Writes the list of records to the CSV file.

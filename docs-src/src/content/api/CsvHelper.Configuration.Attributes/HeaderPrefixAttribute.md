@@ -9,13 +9,13 @@ Appends a prefix to the header of each field of the reference member.
 public class HeaderPrefixAttribute : Attribute
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [Attribute](https://docs.microsoft.com/en-us/dotnet/api/system.attribute) -> HeaderPrefixAttribute
+Inheritance Object -> Attribute -> HeaderPrefixAttribute
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
 HeaderPrefixAttribute() | Appends a prefix to the header of each field of the reference member.
-HeaderPrefixAttribute([String](https://docs.microsoft.com/en-us/dotnet/api/system.string)) | Appends a prefix to the header of each field of the reference member.
+HeaderPrefixAttribute(String) | Appends a prefix to the header of each field of the reference member.
 
 ## Properties
 &nbsp; | &nbsp;

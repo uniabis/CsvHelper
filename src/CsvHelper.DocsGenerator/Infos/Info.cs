@@ -1,6 +1,7 @@
 ﻿using CsvHelper.DocsGenerator.Formatters;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -10,15 +11,43 @@ using System.Xml.Linq;
 
 namespace CsvHelper.DocsGenerator.Infos
 {
+	[DebuggerDisplay("Name = {Name}, DisplayName = {DisplayName}, Namespace = {NameSpace}, FullName = {FullName}")]
     public abstract class Info
     {
-		protected readonly XmlDocFormatter xmlDocFormatter = new XmlDocFormatter();
+		//private string fullName;
+		//private string fullHtmlName;
+		//private string fullCodeName;
 
-		public string Name { get; protected set; }
+		//protected readonly HtmlFormatter htmlFormatter = new HtmlFormatter();
+		//protected readonly XmlDocFormatter xmlDocFormatter = new XmlDocFormatter();
 
-		public string FullName { get; protected set; }
+		//public string Namespace { get; protected set; }
 
-		public string Summary { get; protected set; }
+		//public string Name { get; protected set; }
+
+		//public string HtmlName { get; protected set; }
+
+		//public string CodeName { get; protected set; }
+
+		//public string FullName
+		//{
+		//	get => fullName ?? $"{Namespace}.{Name}";
+		//	protected set => fullName = value;
+		//}
+
+		//public string FullHtmlName
+		//{
+		//	get => fullHtmlName ?? $"{Namespace}.{HtmlName}";
+		//	protected set => fullHtmlName = value;
+		//}
+
+		//public string FullCodeName
+		//{
+		//	get => fullCodeName ?? $"{Namespace}.{CodeName}";
+		//	protected set => fullCodeName = value;
+		//}
+
+		//public string Summary { get; protected set; }
 
 		protected string ParseSummary(string memberName, XElement xmlDocs)
 		{
@@ -66,6 +95,11 @@ namespace CsvHelper.DocsGenerator.Infos
 				}
 
 				return string.Join(" ", summaryText);
+			}
+
+			if (memberName.Substring(2).StartsWith("CsvHelper"))
+			{
+				Console.WriteLine($"No summary found for '{memberName}'.");
 			}
 
 			return null;

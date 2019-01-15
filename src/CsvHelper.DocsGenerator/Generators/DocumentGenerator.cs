@@ -8,7 +8,7 @@ namespace CsvHelper.DocsGenerator.Generators
 {
 	public abstract class DocumentGenerator
     {
-		protected readonly HtmlFormatter htmlFormatter = new HtmlFormatter();
+		//protected readonly HtmlFormatter htmlFormatter = new HtmlFormatter();
 		protected readonly LinkGenerator linkGenerator = new LinkGenerator();
 		protected readonly AssemblyInfo assemblyInfo;
 		protected readonly NamespaceInfo namespaceInfo;

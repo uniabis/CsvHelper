@@ -8,9 +8,9 @@ Creates primitive records.
 public class PrimitiveRecordCreator : RecordCreator
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [RecordCreator](/api/CsvHelper.Expressions/RecordCreator) -> PrimitiveRecordCreator
+Inheritance Object -> RecordCreator -> PrimitiveRecordCreator
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-PrimitiveRecordCreator([CsvReader](/api/CsvHelper/CsvReader)) | Initializes a new instance using the given reader.
+PrimitiveRecordCreator(CsvReader) | Initializes a new instance using the given reader.

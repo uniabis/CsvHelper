@@ -8,7 +8,7 @@ Options used when doing type conversion.
 public class TypeConverterOptions : 
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> TypeConverterOptions
+Inheritance Object -> TypeConverterOptions
 
 ## Properties
 &nbsp; | &nbsp;
@@ -25,4 +25,4 @@ TimeSpanStyle | Gets or sets the time span style.
 ## Methods
 &nbsp; | &nbsp;
 - | -
-Merge([TypeConverterOptions[]](/api/CsvHelper.TypeConversion/TypeConverterOptions[])) | Merges TypeConverterOptions by applying the values of sources in order on to each other. The first object is the source object.
+Merge(TypeConverterOptions[]) | Merges TypeConverterOptions by applying the values of sources in order on to each other. The first object is the source object.

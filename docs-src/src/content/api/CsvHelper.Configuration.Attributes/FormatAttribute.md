@@ -9,13 +9,13 @@ The string format to be used when type converting.
 public class FormatAttribute : Attribute
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [Attribute](https://docs.microsoft.com/en-us/dotnet/api/system.attribute) -> FormatAttribute
+Inheritance Object -> Attribute -> FormatAttribute
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-FormatAttribute([String](https://docs.microsoft.com/en-us/dotnet/api/system.string)) | The string format to be used when type converting.
-FormatAttribute([String[]](https://docs.microsoft.com/en-us/dotnet/api/system.string[])) | The string format to be used when type converting.
+FormatAttribute(String) | The string format to be used when type converting.
+FormatAttribute(String[]) | The string format to be used when type converting.
 
 ## Properties
 &nbsp; | &nbsp;

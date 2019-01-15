@@ -9,17 +9,17 @@ Represents errors that occur while reading a CSV file.
 public class TypeConverterException : CsvHelperException, ISerializable
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception) -> [CsvHelperException](/api/CsvHelper/CsvHelperException) -> TypeConverterException
+Inheritance Object -> Exception -> CsvHelperException -> TypeConverterException
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-TypeConverterException([ITypeConverter](/api/CsvHelper.TypeConversion/ITypeConverter), [MemberMapData](/api/CsvHelper.Configuration/MemberMapData), [String](https://docs.microsoft.com/en-us/dotnet/api/system.string), [ReadingContext](/api/CsvHelper/ReadingContext)) | Initializes a new instance of the ``CsvHelper.TypeConversion.TypeConverterException`` class.
-TypeConverterException([ITypeConverter](/api/CsvHelper.TypeConversion/ITypeConverter), [MemberMapData](/api/CsvHelper.Configuration/MemberMapData), [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object), [WritingContext](/api/CsvHelper/WritingContext)) | Initializes a new instance of the ``CsvHelper.TypeConversion.TypeConverterException`` class.
-TypeConverterException([ITypeConverter](/api/CsvHelper.TypeConversion/ITypeConverter), [MemberMapData](/api/CsvHelper.Configuration/MemberMapData), [String](https://docs.microsoft.com/en-us/dotnet/api/system.string), [ReadingContext](/api/CsvHelper/ReadingContext), [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)) | Initializes a new instance of the ``CsvHelper.TypeConversion.TypeConverterException`` class with a specified error message.
-TypeConverterException([ITypeConverter](/api/CsvHelper.TypeConversion/ITypeConverter), [MemberMapData](/api/CsvHelper.Configuration/MemberMapData), [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object), [WritingContext](/api/CsvHelper/WritingContext), [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)) | Initializes a new instance of the ``CsvHelper.TypeConversion.TypeConverterException`` class with a specified error message.
-TypeConverterException([ITypeConverter](/api/CsvHelper.TypeConversion/ITypeConverter), [MemberMapData](/api/CsvHelper.Configuration/MemberMapData), [String](https://docs.microsoft.com/en-us/dotnet/api/system.string), [ReadingContext](/api/CsvHelper/ReadingContext), [String](https://docs.microsoft.com/en-us/dotnet/api/system.string), [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)) | Initializes a new instance of the ``CsvHelper.TypeConversion.TypeConverterException`` class with a specified error message and a reference to the inner exception that is the cause of this exception.
-TypeConverterException([ITypeConverter](/api/CsvHelper.TypeConversion/ITypeConverter), [MemberMapData](/api/CsvHelper.Configuration/MemberMapData), [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object), [WritingContext](/api/CsvHelper/WritingContext), [String](https://docs.microsoft.com/en-us/dotnet/api/system.string), [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)) | Initializes a new instance of the ``CsvHelper.TypeConversion.TypeConverterException`` class with a specified error message and a reference to the inner exception that is the cause of this exception.
+TypeConverterException(ITypeConverter, MemberMapData, String, ReadingContext) | Initializes a new instance of the ``CsvHelper.TypeConversion.TypeConverterException`` class.
+TypeConverterException(ITypeConverter, MemberMapData, Object, WritingContext) | Initializes a new instance of the ``CsvHelper.TypeConversion.TypeConverterException`` class.
+TypeConverterException(ITypeConverter, MemberMapData, String, ReadingContext, String) | Initializes a new instance of the ``CsvHelper.TypeConversion.TypeConverterException`` class with a specified error message.
+TypeConverterException(ITypeConverter, MemberMapData, Object, WritingContext, String) | Initializes a new instance of the ``CsvHelper.TypeConversion.TypeConverterException`` class with a specified error message.
+TypeConverterException(ITypeConverter, MemberMapData, String, ReadingContext, String, Exception) | Initializes a new instance of the ``CsvHelper.TypeConversion.TypeConverterException`` class with a specified error message and a reference to the inner exception that is the cause of this exception.
+TypeConverterException(ITypeConverter, MemberMapData, Object, WritingContext, String, Exception) | Initializes a new instance of the ``CsvHelper.TypeConversion.TypeConverterException`` class with a specified error message and a reference to the inner exception that is the cause of this exception.
 
 ## Properties
 &nbsp; | &nbsp;

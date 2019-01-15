@@ -1,4 +1,4 @@
-# IHasConstant<TClass, TMember> Interface
+# IHasConstant&lt;TClass, TMember&gt; Interface
 
 Namespace: [CsvHelper.Configuration](/api/CsvHelper.Configuration)
 

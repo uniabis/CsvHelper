@@ -8,9 +8,9 @@ Creates dynamic records.
 public class DynamicRecordCreator : RecordCreator
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [RecordCreator](/api/CsvHelper.Expressions/RecordCreator) -> DynamicRecordCreator
+Inheritance Object -> RecordCreator -> DynamicRecordCreator
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-DynamicRecordCreator([CsvReader](/api/CsvHelper/CsvReader)) | Initializes a new instance.
+DynamicRecordCreator(CsvReader) | Initializes a new instance.

@@ -10,7 +10,7 @@ Types of caches.
 public enum Caches 
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [ValueType](https://docs.microsoft.com/en-us/dotnet/api/system.valuetype) -> [Enum](https://docs.microsoft.com/en-us/dotnet/api/system.enum) -> Caches
+Inheritance Object -> ValueType -> Enum -> Caches
 
 ## Fields
 &nbsp; | &nbsp;

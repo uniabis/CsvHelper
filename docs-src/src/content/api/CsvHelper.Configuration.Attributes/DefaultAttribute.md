@@ -9,12 +9,12 @@ The default value that will be used when reading when the CSV field is empty.
 public class DefaultAttribute : Attribute
 ```
 
-Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) -> [Attribute](https://docs.microsoft.com/en-us/dotnet/api/system.attribute) -> DefaultAttribute
+Inheritance Object -> Attribute -> DefaultAttribute
 
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-DefaultAttribute([Object](https://docs.microsoft.com/en-us/dotnet/api/system.object)) | The default value that will be used when reading when the CSV field is empty.
+DefaultAttribute(Object) | The default value that will be used when reading when the CSV field is empty.
 
 ## Properties
 &nbsp; | &nbsp;
