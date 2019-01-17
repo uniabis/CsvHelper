@@ -1,6 +1,7 @@
 ﻿using CsvHelper.DocsGenerator.Formatters;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -59,7 +60,7 @@ namespace CsvHelper.DocsGenerator
 
 		public static string GetFullHtmlName(this Type type)
 		{
-			throw new NotImplementedException();
+			return $"{type.Namespace}.{type.GetHtmlName()}";
 		}
 
 		public static string GetFullCodeName(this Type type)
@@ -206,8 +207,24 @@ namespace CsvHelper.DocsGenerator
 		{
 			return GetSummary($"M:{XmlDocFormat(method)}");
 		}
-
+			   
 		// Private
+
+		private static Type GetType(string typeName)
+		{
+			Type type = null;
+			if (typeName.StartsWith("CsvHelper"))
+			{
+				var assembly = Assembly.GetAssembly(typeof(CsvHelperException));
+				type = assembly.GetType(typeName);
+			}
+			else
+			{
+				type = Type.GetType(typeName);
+			}
+
+			return type;
+		}
 
 		private static string GetSummary(string memberName)
 		{
@@ -229,7 +246,10 @@ namespace CsvHelper.DocsGenerator
 								text = el.Attribute("name").Value;
 								break;
 							case "see":
-								text = el.Attribute("cref").Value.Substring(2);
+								var typeName = el.Attribute("cref").Value.Substring(2);
+								text = typeName;
+								//var type = GetType(typeName);
+								//text = type == null ? typeName : type.GetFullHtmlName();
 								break;
 							case "c":
 								text = el.Value;
@@ -309,7 +329,13 @@ namespace CsvHelper.DocsGenerator
 			var typeName = methodInfo.DeclaringType.Name;
 			var methodName = methodInfo.Name;
 
-			var name = methodInfo.IsConstructor ? typeName : methodName;
+			var name = methodName;
+			if (methodInfo.IsConstructor)
+			{
+				name = methodInfo.DeclaringType.IsGenericType
+					? typeName.Substring(0, typeName.IndexOf('`'))
+					: typeName;
+			}
 
 			var genericArgumentsText = string.Empty;
 			var genericArguments = new List<Type>();
