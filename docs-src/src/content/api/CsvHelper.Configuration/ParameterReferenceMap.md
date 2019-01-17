@@ -5,7 +5,7 @@ Namespace: [CsvHelper.Configuration](/api/CsvHelper.Configuration)
 Mapping info for a reference parameter mapping to a class.
 
 ```cs
-public class ParameterReferenceMap : 
+public class ParameterReferenceMap 
 ```
 
 Inheritance Object -> ParameterReferenceMap

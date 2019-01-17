@@ -5,7 +5,7 @@ Namespace: [CsvHelper.Configuration](/api/CsvHelper.Configuration)
 The configuration data for the reference map.
 
 ```cs
-public class MemberReferenceMapData : 
+public class MemberReferenceMapData 
 ```
 
 Inheritance Object -> MemberReferenceMapData

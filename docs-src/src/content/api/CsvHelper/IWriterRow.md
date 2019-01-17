@@ -5,7 +5,7 @@ Namespace: [CsvHelper](/api/CsvHelper)
 Defines methods used to write a CSV row.
 
 ```cs
-public interface IWriterRow : 
+public interface IWriterRow 
 ```
 
 ## Properties

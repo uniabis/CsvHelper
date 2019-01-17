@@ -25,9 +25,9 @@ CsvReader(TextReader, Configuration, Boolean) | Creates a new CSV reader using t
 - | -
 Configuration | Gets the configuration.
 Context | Gets the reading context.
-this[[Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)] | Gets the raw field at position (column) index.
-this[[String](https://docs.microsoft.com/en-us/dotnet/api/system.string)] | Gets the raw field at position (column) name.
-this[[String](https://docs.microsoft.com/en-us/dotnet/api/system.string), [Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)] | Gets the raw field at position (column) name.
+this[Int32] | Gets the raw field at position (column) index.
+this[String] | Gets the raw field at position (column) name.
+this[String, Int32] | Gets the raw field at position (column) name.
 Parser | Gets the parser.
 
 ## Methods

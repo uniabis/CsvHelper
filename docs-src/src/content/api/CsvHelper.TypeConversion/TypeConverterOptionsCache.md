@@ -5,7 +5,7 @@ Namespace: [CsvHelper.TypeConversion](/api/CsvHelper.TypeConversion)
 Caches ``CsvHelper.TypeConversion.TypeConverterOptions`` for a given type.
 
 ```cs
-public class TypeConverterOptionsCache : 
+public class TypeConverterOptionsCache 
 ```
 
 Inheritance Object -> TypeConverterOptionsCache

@@ -5,7 +5,7 @@ Namespace: [CsvHelper](/api/CsvHelper)
 Defines the functionality of a class that creates objects from a given type.
 
 ```cs
-public interface IObjectResolver : 
+public interface IObjectResolver 
 ```
 
 ## Properties

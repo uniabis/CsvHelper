@@ -217,6 +217,13 @@ namespace CsvHelper.DocsGenerator
 			{
 				var assembly = Assembly.GetAssembly(typeof(CsvHelperException));
 				type = assembly.GetType(typeName);
+
+				var currentTypeName = typeName;
+				while (type == null && !string.IsNullOrWhiteSpace(currentTypeName) && currentTypeName.Contains('.'))
+				{
+					currentTypeName = currentTypeName.Substring(0, currentTypeName.LastIndexOf('.'));
+					type = assembly.GetType(typeName);
+				}
 			}
 			else
 			{
@@ -239,24 +246,25 @@ namespace CsvHelper.DocsGenerator
 					string text;
 					if (node.NodeType == XmlNodeType.Element)
 					{
+						string typeName = string.Empty;
 						var el = (XElement)node;
 						switch (el.Name.ToString())
 						{
 							case "paramref":
-								text = el.Attribute("name").Value;
+								typeName = el.Attribute("name").Value;
 								break;
 							case "see":
-								var typeName = el.Attribute("cref").Value.Substring(2);
-								text = typeName;
-								//var type = GetType(typeName);
-								//text = type == null ? typeName : type.GetFullHtmlName();
+								typeName = el.Attribute("cref").Value.Substring(2);
 								break;
 							case "c":
-								text = el.Value;
+								typeName = el.Value;
 								break;
 							default:
 								throw new InvalidOperationException($"Unhandled element '{el.Name}'.");
 						}
+
+						var type = GetType(typeName);
+						text = type == null ? typeName : type.GetFullCodeName();
 
 						text = $"``{text.Trim()}``";
 					}
@@ -269,6 +277,7 @@ namespace CsvHelper.DocsGenerator
 						throw new InvalidOperationException($"Unhandled node type '{node.NodeType}'.");
 					}
 
+					// Replace multiple spaces with a single space.
 					text = Regex.Replace(text, @"\s{2,}", " ").Trim();
 
 					summaryText.Add(text);
@@ -283,7 +292,6 @@ namespace CsvHelper.DocsGenerator
 			}
 
 			return null;
-
 		}
 
 		private static string HtmlFormat(Type type, bool generateLinks = false, bool isCodeBlock = false)
@@ -452,12 +460,3 @@ namespace CsvHelper.DocsGenerator
 		}
 	}
 }
-
-//method.Name
-//".ctor"
-//method.DeclaringType.Name
-//"Factory"
-//method.DeclaringType.Namespace
-//"CsvHelper"
-//method.DeclaringType.FullName
-//"CsvHelper.Factory"

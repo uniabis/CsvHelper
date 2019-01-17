@@ -5,7 +5,7 @@ Namespace: [CsvHelper.Configuration](/api/CsvHelper.Configuration)
 Maps class members to CSV fields.
 
 ```cs
-public abstract class ClassMap : 
+public abstract class ClassMap 
 ```
 
 Inheritance Object -> ClassMap

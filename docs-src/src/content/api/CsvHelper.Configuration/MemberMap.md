@@ -6,7 +6,7 @@ Mapping info for a member to a CSV field.
 
 ```cs
 [System.Diagnostics.DebuggerDisplayAttribute]
-public abstract class MemberMap : 
+public abstract class MemberMap 
 ```
 
 Inheritance Object -> MemberMap

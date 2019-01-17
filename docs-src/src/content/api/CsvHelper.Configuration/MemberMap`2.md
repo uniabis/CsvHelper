@@ -14,7 +14,7 @@ Inheritance Object -> MemberMap -> MemberMap&lt;TClass, TMember&gt;
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-MemberMap`2(MemberInfo) | Creates a new ``CsvHelper.Configuration.MemberMap`` instance using the specified member.
+MemberMap(MemberInfo) | Creates a new ``CsvHelper.Configuration.MemberMap`` instance using the specified member.
 
 ## Methods
 &nbsp; | &nbsp;

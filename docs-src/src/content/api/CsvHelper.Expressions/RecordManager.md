@@ -5,7 +5,7 @@ Namespace: [CsvHelper.Expressions](/api/CsvHelper.Expressions)
 Manages record manipulation.
 
 ```cs
-public class RecordManager : 
+public class RecordManager 
 ```
 
 Inheritance Object -> RecordManager

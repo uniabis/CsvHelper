@@ -5,7 +5,7 @@ Namespace: [CsvHelper.Configuration](/api/CsvHelper.Configuration)
 Configuration used for the ``CsvHelper.ISerializer`` .
 
 ```cs
-public interface ISerializerConfiguration : 
+public interface ISerializerConfiguration 
 ```
 
 ## Properties

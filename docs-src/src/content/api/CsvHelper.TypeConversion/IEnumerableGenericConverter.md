@@ -2,7 +2,7 @@
 
 Namespace: [CsvHelper.TypeConversion](/api/CsvHelper.TypeConversion)
 
-Converts an ``System.Collections.Generic.IEnumerable`1`` to and from a ``System.String`` .
+Converts an ``System.Collections.Generic.IEnumerable<T>`` to and from a ``System.String`` .
 
 ```cs
 public class IEnumerableGenericConverter : IEnumerableConverter, ITypeConverter

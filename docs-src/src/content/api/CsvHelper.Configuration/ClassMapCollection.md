@@ -6,7 +6,7 @@ Collection that holds CsvClassMaps for record types.
 
 ```cs
 [System.Reflection.DefaultMemberAttribute]
-public class ClassMapCollection : 
+public class ClassMapCollection 
 ```
 
 Inheritance Object -> ClassMapCollection
@@ -19,7 +19,7 @@ ClassMapCollection(Configuration) | Creates a new instance using the given confi
 ## Properties
 &nbsp; | &nbsp;
 - | -
-this[[Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)] | Gets the ``CsvHelper.Configuration.ClassMap`` for the specified record type.
+this[Type] | Gets the ``CsvHelper.Configuration.ClassMap`` for the specified record type.
 
 ## Methods
 &nbsp; | &nbsp;

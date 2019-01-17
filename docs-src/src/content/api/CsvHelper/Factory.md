@@ -13,7 +13,7 @@ Inheritance Object -> Factory
 ## Methods
 &nbsp; | &nbsp;
 - | -
-CreateClassMapBuilder&lt;T&gt;() | Access point for fluent interface to dynamically build a ``CsvHelper.Configuration.ClassMap`1``
+CreateClassMapBuilder&lt;T&gt;() | Access point for fluent interface to dynamically build a ``CsvHelper.Configuration.ClassMap<TClass>``
 CreateParser(TextReader, Configuration) | Creates an ``CsvHelper.IParser`` .
 CreateParser(TextReader) | Creates an ``CsvHelper.IParser`` .
 CreateReader(TextReader, Configuration) | Creates an ``CsvHelper.IReader`` .

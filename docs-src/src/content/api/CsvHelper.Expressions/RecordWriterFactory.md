@@ -5,7 +5,7 @@ Namespace: [CsvHelper.Expressions](/api/CsvHelper.Expressions)
 Factory to create record writers.
 
 ```cs
-public class RecordWriterFactory : 
+public class RecordWriterFactory 
 ```
 
 Inheritance Object -> RecordWriterFactory

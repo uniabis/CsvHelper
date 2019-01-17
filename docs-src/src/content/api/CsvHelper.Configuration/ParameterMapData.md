@@ -6,7 +6,7 @@ The constructor paramter data for the map.
 
 ```cs
 [System.Diagnostics.DebuggerDisplayAttribute]
-public class ParameterMapData : 
+public class ParameterMapData 
 ```
 
 Inheritance Object -> ParameterMapData

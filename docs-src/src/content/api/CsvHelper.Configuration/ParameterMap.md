@@ -6,7 +6,7 @@ Mapping for a constructor parameter. This may contain value type data, a constru
 
 ```cs
 [System.Diagnostics.DebuggerDisplayAttribute]
-public class ParameterMap : 
+public class ParameterMap 
 ```
 
 Inheritance Object -> ParameterMap

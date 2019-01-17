@@ -5,7 +5,7 @@ Namespace: [CsvHelper.Expressions](/api/CsvHelper.Expressions)
 Hydrates members of an existing record.
 
 ```cs
-public class RecordHydrator : 
+public class RecordHydrator 
 ```
 
 Inheritance Object -> RecordHydrator

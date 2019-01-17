@@ -33,7 +33,12 @@ namespace CsvHelper.DocsGenerator.Generators
 				content.AppendLine($"[{attribute.GetFullCodeName()}]");
 			}
 
-			var inheritanceText = typeInfo.Type.IsEnum ? string.Empty : $": {string.Join(", ", typeInfo.Implementers.Select(i => i.GetCodeName()))}";
+			var inheritanceText = string.Empty;
+			if (!typeInfo.Type.IsEnum && typeInfo.Implementers.Count > 0)
+			{
+				inheritanceText = $": {string.Join(", ", typeInfo.Implementers.Select(i => i.GetCodeName()))}";
+			}
+
 			var typeModifier = string.Empty;
 			if (typeInfo.Type.IsAbstract && typeInfo.Type.IsSealed && !typeInfo.Type.IsInterface)
 			{
@@ -91,7 +96,7 @@ namespace CsvHelper.DocsGenerator.Generators
 				{
 					if (property.IndexParameters.Count > 0)
 					{
-						var parameters = string.Join(", ", property.IndexParameters.Select(ip => linkGenerator.GenerateLink(ip.ParameterType)));
+						var parameters = string.Join(", ", property.IndexParameters.Select(ip => ip.ParameterType.GetHtmlName()));
 						content.AppendLine($"this[{parameters}] | {property.Property.GetSummary()}");
 					}
 					else

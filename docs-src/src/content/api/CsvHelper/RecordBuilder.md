@@ -5,7 +5,7 @@ Namespace: [CsvHelper](/api/CsvHelper)
 Builds CSV records.
 
 ```cs
-public class RecordBuilder : 
+public class RecordBuilder 
 ```
 
 Inheritance Object -> RecordBuilder

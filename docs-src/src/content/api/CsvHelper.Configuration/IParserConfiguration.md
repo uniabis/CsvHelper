@@ -5,7 +5,7 @@ Namespace: [CsvHelper.Configuration](/api/CsvHelper.Configuration)
 Configuration used for the ``CsvHelper.IParser`` .
 
 ```cs
-public interface IParserConfiguration : 
+public interface IParserConfiguration 
 ```
 
 ## Properties

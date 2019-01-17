@@ -5,7 +5,7 @@ Namespace: [CsvHelper.Expressions](/api/CsvHelper.Expressions)
 Manages expression creation.
 
 ```cs
-public class ExpressionManager : 
+public class ExpressionManager 
 ```
 
 Inheritance Object -> ExpressionManager

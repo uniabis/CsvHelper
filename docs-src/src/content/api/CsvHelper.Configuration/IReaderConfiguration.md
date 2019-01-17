@@ -34,8 +34,8 @@ TypeConverterOptionsCache | Gets or sets the ``CsvHelper.Configuration.IReaderCo
 - | -
 AutoMap&lt;T&gt;() | Generates a ``CsvHelper.Configuration.ClassMap`` for the type.
 AutoMap(Type) | Generates a ``CsvHelper.Configuration.ClassMap`` for the type.
-RegisterClassMap&lt;TMap&gt;() | Use a ``CsvHelper.Configuration.ClassMap`1`` to configure mappings. When using a class map, no members are mapped by default. Only member specified in the mapping are used.
-RegisterClassMap(Type) | Use a ``CsvHelper.Configuration.ClassMap`1`` to configure mappings. When using a class map, no member are mapped by default. Only member specified in the mapping are used.
+RegisterClassMap&lt;TMap&gt;() | Use a ``CsvHelper.Configuration.ClassMap<TClass>`` to configure mappings. When using a class map, no members are mapped by default. Only member specified in the mapping are used.
+RegisterClassMap(Type) | Use a ``CsvHelper.Configuration.ClassMap<TClass>`` to configure mappings. When using a class map, no member are mapped by default. Only member specified in the mapping are used.
 RegisterClassMap(ClassMap) | Registers the class map.
 UnregisterClassMap&lt;TMap&gt;() | Unregisters the class map.
 UnregisterClassMap(Type) | Unregisters the class map.

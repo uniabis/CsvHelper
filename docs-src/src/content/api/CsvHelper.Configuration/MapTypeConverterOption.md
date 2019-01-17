@@ -5,7 +5,7 @@ Namespace: [CsvHelper.Configuration](/api/CsvHelper.Configuration)
 Sets type converter options on a member map.
 
 ```cs
-public class MapTypeConverterOption : 
+public class MapTypeConverterOption 
 ```
 
 Inheritance Object -> MapTypeConverterOption

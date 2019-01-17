@@ -6,7 +6,7 @@ The configuration data for the reference map.
 
 ```cs
 [System.Diagnostics.DebuggerDisplayAttribute]
-public class ParameterReferenceMapData : 
+public class ParameterReferenceMapData 
 ```
 
 Inheritance Object -> ParameterReferenceMapData

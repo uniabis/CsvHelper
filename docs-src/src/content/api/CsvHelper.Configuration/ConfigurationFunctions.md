@@ -5,7 +5,7 @@ Namespace: [CsvHelper.Configuration](/api/CsvHelper.Configuration)
 Holds the default callback methods for delegate members of ``CsvHelper.Configuration.Configuration`` .
 
 ```cs
-public static class ConfigurationFunctions : 
+public static class ConfigurationFunctions 
 ```
 
 Inheritance Object -> ConfigurationFunctions

@@ -5,7 +5,7 @@ Namespace: [CsvHelper.Expressions](/api/CsvHelper.Expressions)
 Base implementation for classes that write records.
 
 ```cs
-public abstract class RecordWriter : 
+public abstract class RecordWriter 
 ```
 
 Inheritance Object -> RecordWriter

@@ -22,8 +22,8 @@ CsvDataReader(CsvReader) | Initializes a new instance of the ``CsvHelper.CsvData
 Depth | Gets a value indicating the depth of nesting for the current row.
 FieldCount | Gets the number of columns in the current row.
 IsClosed | Gets a value indicating whether the data reader is closed.
-this[[Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)] | Gets the column with the specified index.
-this[[String](https://docs.microsoft.com/en-us/dotnet/api/system.string)] | Gets the column with the specified name.
+this[Int32] | Gets the column with the specified index.
+this[String] | Gets the column with the specified name.
 RecordsAffected | Gets the number of rows changed, inserted, or deleted by execution of the SQL statement.
 
 ## Methods

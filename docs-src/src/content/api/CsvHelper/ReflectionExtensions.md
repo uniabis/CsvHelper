@@ -6,7 +6,7 @@ Extensions to help with reflection.
 
 ```cs
 [System.Runtime.CompilerServices.ExtensionAttribute]
-public static class ReflectionExtensions : 
+public static class ReflectionExtensions 
 ```
 
 Inheritance Object -> ReflectionExtensions

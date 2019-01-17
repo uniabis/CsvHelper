@@ -6,7 +6,7 @@ Mapping info for a reference member mapping to a class.
 
 ```cs
 [System.Diagnostics.DebuggerDisplayAttribute]
-public class MemberReferenceMap : 
+public class MemberReferenceMap 
 ```
 
 Inheritance Object -> MemberReferenceMap

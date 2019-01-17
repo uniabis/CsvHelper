@@ -5,7 +5,7 @@ Namespace: [CsvHelper.TypeConversion](/api/CsvHelper.TypeConversion)
 Converts objects to and from strings.
 
 ```cs
-public interface ITypeConverter : 
+public interface ITypeConverter 
 ```
 
 ## Methods

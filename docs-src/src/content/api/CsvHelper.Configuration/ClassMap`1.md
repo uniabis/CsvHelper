@@ -13,7 +13,7 @@ Inheritance Object -> ClassMap -> ClassMap&lt;TClass&gt;
 ## Constructors
 &nbsp; | &nbsp;
 - | -
-ClassMap`1() | Creates an instance of ``CsvHelper.Configuration.ClassMap`1`` .
+ClassMap() | Creates an instance of ``CsvHelper.Configuration.ClassMap<TClass>`` .
 
 ## Methods
 &nbsp; | &nbsp;

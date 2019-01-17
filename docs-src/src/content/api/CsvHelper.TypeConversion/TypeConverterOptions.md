@@ -5,7 +5,7 @@ Namespace: [CsvHelper.TypeConversion](/api/CsvHelper.TypeConversion)
 Options used when doing type conversion.
 
 ```cs
-public class TypeConverterOptions : 
+public class TypeConverterOptions 
 ```
 
 Inheritance Object -> TypeConverterOptions

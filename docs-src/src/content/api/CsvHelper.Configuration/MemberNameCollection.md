@@ -15,7 +15,7 @@ Inheritance Object -> MemberNameCollection
 &nbsp; | &nbsp;
 - | -
 Count | Gets the count.
-this[[Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)] | Gets the name at the given index. If a prefix is set, it will be prepended to the name.
+this[Int32] | Gets the name at the given index. If a prefix is set, it will be prepended to the name.
 Names | Gets the raw list of names without the prefix being prepended.
 Prefix | Gets the prefix to use for each name.
 

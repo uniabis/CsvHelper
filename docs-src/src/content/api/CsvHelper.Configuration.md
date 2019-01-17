@@ -9,7 +9,7 @@
 [Configuration](/api/CsvHelper.Configuration/Configuration) | Configuration used for reading and writing CSV data.
 [ConfigurationException](/api/CsvHelper.Configuration/ConfigurationException) | Represents configuration errors that occur.
 [ConfigurationFunctions](/api/CsvHelper.Configuration/ConfigurationFunctions) | Holds the default callback methods for delegate members of ``CsvHelper.Configuration.Configuration`` .
-[DefaultClassMap&lt;T&gt;](/api/CsvHelper.Configuration/DefaultClassMap&lt;T&gt;) | A default ``CsvHelper.Configuration.ClassMap`1`` that can be used to create a class map dynamically.
+[DefaultClassMap&lt;T&gt;](/api/CsvHelper.Configuration/DefaultClassMap&lt;T&gt;) | A default ``CsvHelper.Configuration.ClassMap<TClass>`` that can be used to create a class map dynamically.
 [MapTypeConverterOption](/api/CsvHelper.Configuration/MapTypeConverterOption) | Sets type converter options on a member map.
 [MemberMap](/api/CsvHelper.Configuration/MemberMap) | Mapping info for a member to a CSV field.
 [MemberMap&lt;TClass, TMember&gt;](/api/CsvHelper.Configuration/MemberMap&lt;TClass, TMember&gt;) | Mapping info for a member to a CSV field.
