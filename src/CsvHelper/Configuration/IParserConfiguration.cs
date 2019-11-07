@@ -95,5 +95,10 @@ namespace CsvHelper.Configuration
 		/// Gets or sets the field trimming options.
 		/// </summary>
 		TrimOptions TrimOptions { get; set; }
+
+		/// <summary>
+		/// Gets or sets true to distinguish between empty string and null string.
+		/// </summary>
+		bool AwareNullString { get; set; }
 	}
 }

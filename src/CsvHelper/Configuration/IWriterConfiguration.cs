@@ -172,5 +172,11 @@ namespace CsvHelper.Configuration
 		/// were created with.
 		/// </summary>
 		IComparer<string> DynamicPropertySort { get; set; }
+
+		/// <summary>
+		/// Gets or sets true to distinguish between empty string and null string.
+		/// </summary>
+		bool AwareNullString { get; set; }
+
 	}
 }

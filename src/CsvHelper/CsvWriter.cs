@@ -90,7 +90,7 @@ namespace CsvHelper
 		/// <param name="field">The converted field to write.</param>
 		public virtual void WriteConvertedField(string field)
 		{
-			if (field == null)
+			if (!context.WriterConfiguration.AwareNullString && field == null)
 			{
 				return;
 			}
@@ -113,7 +113,7 @@ namespace CsvHelper
 				field = field.Trim();
 			}
 
-			var shouldQuote = context.WriterConfiguration.ShouldQuote(field, context);
+			var shouldQuote = (context.WriterConfiguration.AwareNullString && field == string.Empty) ? true : context.WriterConfiguration.ShouldQuote(field, context);
 
 			WriteField(field, shouldQuote);
 		}
@@ -136,6 +136,10 @@ namespace CsvHelper
 			if (shouldQuote && !string.IsNullOrEmpty(field))
 			{
 				field = field.Replace(context.WriterConfiguration.QuoteString, context.WriterConfiguration.DoubleQuoteString);
+			}
+			else if (context.WriterConfiguration.AwareNullString)
+			{
+				field = field ?? string.Empty;
 			}
 
 			if (shouldQuote)

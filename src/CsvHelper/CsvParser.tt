@@ -77,11 +77,12 @@ namespace CsvHelper
 			this.fieldReader = fieldReader ?? throw new ArgumentNullException(nameof(fieldReader));
 			context = fieldReader.Context as ReadingContext ?? throw new InvalidOperationException($"For {nameof(FieldReader)} to be used in {nameof(CsvParser)}, {nameof(FieldReader.Context)} must also implement {nameof(ReadingContext)}.");
 		}
-		<#
-		for (var i = 0; i < 2; i++)
-		{
-			var isAsync = i != 0;
-		#>	
+<#
+	for (var i = 0; i < 2; i++)
+	{
+		var isAsync = i != 0;
+#>
+
 		/// <summary>
 		/// Reads a record from the CSV file<#= isAsync ? " asynchronously" : string.Empty #>.
 		/// </summary>
@@ -101,8 +102,10 @@ namespace CsvHelper
 				throw ex as CsvHelperException ?? new ParserException(context, "An unexpected error occurred.", ex);
 			}
 		}
-		<# } 
-		#>	
+<#
+	} 
+#>
+
 		/// <summary>
 		/// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
 		/// </summary>
@@ -133,11 +136,12 @@ namespace CsvHelper
 			context = null;
 			disposed = true;
 		}
-		<#
-		for (var i = 0; i < 2; i++)
-		{
-			var isAsync = i != 0;
-		#>	
+<#
+	for (var i = 0; i < 2; i++)
+	{
+		var isAsync = i != 0;
+#>
+
 		/// <summary>
 		/// Reads a line of the CSV file.
 		/// </summary>
@@ -202,13 +206,14 @@ namespace CsvHelper
 
 			return context.RecordBuilder.ToArray();
 		}
-		<# 
-		}
-		
-		for (var i = 0; i < 2; i++)
-		{
-			var isAsync = i != 0;
-		#>	
+<# 
+	}
+
+	for (var i = 0; i < 2; i++)
+	{
+		var isAsync = i != 0;
+#>
+
 		/// <summary>
 		/// Reads a blank line. This accounts for empty lines
 		/// and commented out lines.
@@ -243,13 +248,14 @@ namespace CsvHelper
 				c = fieldReader.GetChar();
 			}
 		}
-		<# 
-		}
+<# 
+}
 
-		for (var i = 0; i < 2; i++)
-		{
-			var isAsync = i != 0;
-		#>	
+	for (var i = 0; i < 2; i++)
+	{
+		var isAsync = i != 0;
+#>
+
 		/// <summary>
 		/// Reads until a delimiter or line ending is found.
 		/// </summary>
@@ -268,7 +274,7 @@ namespace CsvHelper
 						fieldReader.SetFieldStart();
 					}
 
-					context.RecordBuilder.Add(fieldReader.GetField());
+					context.RecordBuilder.Add(fieldReader.GetField().EmptyToNull(context.ParserConfiguration.AwareNullString));
 					return true;
 				}
 
@@ -310,7 +316,7 @@ namespace CsvHelper
 					if (<#= Await(isAsync) #>ReadDelimiter<#= AsyncPostfix(isAsync) #>()<#= ConfigureAwait(isAsync) #>)
 					{
 						// Set the end of the field to the char before the delimiter.
-						context.RecordBuilder.Add(fieldReader.GetField());
+						context.RecordBuilder.Add(fieldReader.GetField().EmptyToNull(context.ParserConfiguration.AwareNullString));
 
 						return false;
 					}
@@ -321,7 +327,7 @@ namespace CsvHelper
 					fieldReader.SetFieldEnd(-1);
 					var offset = <#= Await(isAsync) #>ReadLineEnding<#= AsyncPostfix(isAsync) #>()<#= ConfigureAwait(isAsync) #>;
 					fieldReader.SetRawRecordEnd(offset);
-					context.RecordBuilder.Add(fieldReader.GetField());
+					context.RecordBuilder.Add(fieldReader.GetField().EmptyToNull(context.ParserConfiguration.AwareNullString));
 
 					fieldReader.SetFieldStart(offset);
 					fieldReader.SetBufferPosition(offset);
@@ -339,7 +345,7 @@ namespace CsvHelper
 						fieldReader.SetFieldStart();
 					}
 
-					context.RecordBuilder.Add(fieldReader.GetField());
+					context.RecordBuilder.Add(fieldReader.GetField().EmptyToNull(context.ParserConfiguration.AwareNullString));
 
 					return true;
 				}
@@ -347,13 +353,14 @@ namespace CsvHelper
 				c = fieldReader.GetChar();
 			}
 		}
-		<# 
-		}
+<# 
+	}
 
-		for (var i = 0; i < 2; i++)
-		{
-			var isAsync = i != 0;
-		#>	
+	for (var i = 0; i < 2; i++)
+	{
+		var isAsync = i != 0;
+#>
+
 		/// <summary>
 		/// Reads until the field is not quoted and a delimiter is found.
 		/// </summary>
@@ -394,7 +401,7 @@ namespace CsvHelper
 					fieldReader.SetFieldEnd(-1);
 					fieldReader.AppendField();
 					fieldReader.SetFieldStart(-1);
-					ReadSpaces();
+					<#= Await(isAsync) #>ReadSpaces<#= AsyncPostfix(isAsync) #>()<#= ConfigureAwait(isAsync) #>;
 					cPrev = ' ';
 
 					if (c == context.ParserConfiguration.Escape || c == context.ParserConfiguration.Quote)
@@ -511,13 +518,14 @@ namespace CsvHelper
 				}
 			}
 		}
-		<# 
-		}
+<# 
+	}
 
-		for (var i = 0; i < 2; i++)
-		{
-			var isAsync = i != 0;
-		#>	
+	for (var i = 0; i < 2; i++)
+	{
+		var isAsync = i != 0;
+#>
+
 		/// <summary>
 		/// Reads until the delimiter is done.
 		/// </summary>
@@ -552,13 +560,14 @@ namespace CsvHelper
 
 			return true;
 		}
-		<# 
-		}
+<# 
+	}
 
-		for (var i = 0; i < 2; i++)
-		{
-			var isAsync = i != 0;
-		#>	
+	for (var i = 0; i < 2; i++)
+	{
+		var isAsync = i != 0;
+#>
+
 		/// <summary>
 		/// Reads until the line ending is done.
 		/// </summary>
@@ -589,14 +598,14 @@ namespace CsvHelper
 
 			return fieldStartOffset;
 		}
-		<# 
-		} 
+<# 
+	} 
 
-		for (var i = 0; i < 2; i++)
-		{
-			var isAsync = i != 0;
-		#>
-	
+	for (var i = 0; i < 2; i++)
+	{
+		var isAsync = i != 0;
+#>
+
 		/// <summary>
 		/// Reads until a non-space character is found.
 		/// </summary>
@@ -622,5 +631,8 @@ namespace CsvHelper
 
 			return true;
 		}
-	<# } #>}
+<#
+}
+#>
+	}
 }
