@@ -503,7 +503,7 @@ namespace CsvHelper.Configuration
                     TypeConverterCache.AddConverter<BigInteger>(EmptiableNullableConverter.Create<BigIntegerConverter>(awareNullString));
                     TypeConverterCache.AddConverter<bool>(EmptiableNullableConverter.Create<BooleanConverter>(awareNullString));
                     TypeConverterCache.AddConverter<byte>(EmptiableNullableConverter.Create<ByteConverter>(awareNullString));
-                    TypeConverterCache.AddConverter<byte[]>(EmptiableNullableConverter.CreateByteArrayConverter(awareNullString));
+                    TypeConverterCache.AddConverter<byte[]>(EmptiableNullableConverter.Create<ByteArrayConverter>(awareNullString));
                     TypeConverterCache.AddConverter<char>(EmptiableNullableConverter.Create<CharConverter>(awareNullString));
                     TypeConverterCache.AddConverter<DateTime>(EmptiableNullableConverter.Create<DateTimeConverter>(awareNullString));
                     TypeConverterCache.AddConverter<DateTimeOffset>(EmptiableNullableConverter.Create<DateTimeOffsetConverter>(awareNullString));
@@ -522,10 +522,11 @@ namespace CsvHelper.Configuration
                     TypeConverterCache.AddConverter<uint>(EmptiableNullableConverter.Create<UInt32Converter>(awareNullString));
                     TypeConverterCache.AddConverter<ulong>(EmptiableNullableConverter.Create<UInt64Converter>(awareNullString));
 
-                    TypeConverterCache.AddConverter(typeof(IList), EmptiableNullableConverter.CreateIEnumerableConverter(awareNullString));
-                    TypeConverterCache.AddConverter(typeof(ICollection), EmptiableNullableConverter.CreateIEnumerableConverter(awareNullString));
-                    TypeConverterCache.AddConverter(typeof(IEnumerable), EmptiableNullableConverter.CreateIEnumerableConverter(awareNullString));
-                    TypeConverterCache.AddConverter(typeof(IDictionary), EmptiableNullableConverter.CreateIDictionaryConverter(awareNullString));
+                    TypeConverterCache.AddConverter(typeof(IList), EmptiableNullableConverter.Create<IEnumerableConverter>(awareNullString));
+                    TypeConverterCache.AddConverter(typeof(ICollection), EmptiableNullableConverter.Create<IEnumerableConverter>(awareNullString));
+                    TypeConverterCache.AddConverter(typeof(IEnumerable), EmptiableNullableConverter.Create<IEnumerableConverter>(awareNullString));
+
+                    TypeConverterCache.AddConverter(typeof(IDictionary), EmptiableNullableConverter.Create<IDictionaryConverter>(awareNullString));
                 }
             }
         }

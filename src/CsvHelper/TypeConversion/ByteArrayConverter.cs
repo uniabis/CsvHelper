@@ -18,10 +18,18 @@ namespace CsvHelper.TypeConversion
 		private readonly byte ByteLength;
 
 		/// <summary>
+		/// Creates a new ByteArrayConverter.
+		/// </summary>
+		public ByteArrayConverter()
+			: this(options: ByteArrayConverterOptions.Hexadecimal | ByteArrayConverterOptions.HexInclude0x)
+		{
+		}
+
+		/// <summary>
 		/// Creates a new ByteArrayConverter using the given <see cref="ByteArrayConverterOptions"/>.
 		/// </summary>
 		/// <param name="options">The options.</param>
-		public ByteArrayConverter( ByteArrayConverterOptions options = ByteArrayConverterOptions.Hexadecimal | ByteArrayConverterOptions.HexInclude0x )
+		public ByteArrayConverter( ByteArrayConverterOptions options)
 		{
 			// Defaults to the literal format used by C# for whole numbers, and SQL Server for binary data.
 			this.options = options;
